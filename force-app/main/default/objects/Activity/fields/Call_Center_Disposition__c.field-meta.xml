@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call_Center_Disposition__c</fullName>
+    <label>Call Center Disposition</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer disputes that payment has already been made or there is no OD</fullName>
+                <default>false</default>
+                <label>Customer disputes that payment has already been made or there is no OD</label>
+            </value>
+            <value>
+                <fullName>Customer promises to pay</fullName>
+                <default>false</default>
+                <label>Customer promises to pay</label>
+            </value>
+            <value>
+                <fullName>Customer asks to call back</fullName>
+                <default>false</default>
+                <label>Customer asks to call back</label>
+            </value>
+            <value>
+                <fullName>Customer asks to arrange for a pick up</fullName>
+                <default>false</default>
+                <label>Customer asks to arrange for a pick up</label>
+            </value>
+            <value>
+                <fullName>Customer asks to reach out for a third party to follow up for the payment</fullName>
+                <default>false</default>
+                <label>Customer asks to reach out for a third party to follow up for the payment</label>
+            </value>
+            <value>
+                <fullName>Customer refuses to pay</fullName>
+                <default>false</default>
+                <label>Customer refuses to pay</label>
+            </value>
+            <value>
+                <fullName>Customer reports a theft</fullName>
+                <default>false</default>
+                <label>Customer reports a theft</label>
+            </value>
+            <value>
+                <fullName>Customer reports an accident</fullName>
+                <default>false</default>
+                <label>Customer reports an accident</label>
+            </value>
+            <value>
+                <fullName>Someone informs that the customer has expired</fullName>
+                <default>false</default>
+                <label>Someone informs that the customer has expired</label>
+            </value>
+            <value>
+                <fullName>Reminder Given</fullName>
+                <default>false</default>
+                <label>Reminder Given</label>
+            </value>
+            <value>
+                <fullName>Could not connect with the customer</fullName>
+                <default>false</default>
+                <label>Could not connect with the customer</label>
+            </value>
+            <value>
+                <fullName>Customer completed online payment</fullName>
+                <default>false</default>
+                <label>Customer completed online payment</label>
+            </value>
+            <value>
+                <fullName>Customer pays online payment</fullName>
+                <default>false</default>
+                <label>Customer pays online payment</label>
+            </value>
+            <value>
+                <fullName>Customer claims to have made payment</fullName>
+                <default>false</default>
+                <label>Customer claims to have made payment</label>
+            </value>
+            <value>
+                <fullName>Customer claims to have made RTGS payment</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Customer claims to have made RTGS payment</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

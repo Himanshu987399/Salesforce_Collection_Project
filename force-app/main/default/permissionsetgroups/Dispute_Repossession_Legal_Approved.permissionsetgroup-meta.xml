@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Dispute Repossession Legal Approved</label>
+    <permissionSets>Call_Center_Financial_Service_Cloud_Extension</permissionSets>
+    <permissionSets>Call_Center_Permission_Set</permissionSets>
+    <permissionSets>Dispute_Repossession_Legal_Permission_Set</permissionSets>
+    <permissionSets>Docgen_Designer_Standard_User</permissionSets>
+    <permissionSets>force__DocGenDesigner</permissionSets>
+    <permissionSets>force__DocGenUser</permissionSets>
+    <permissionSets>force__OmniStudioExecution</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>What was the receipt number?</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>What was the receipt number?</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Text</dataType>
+    <developerName>What_was_the_receipt_numbers</developerName>
+    <formulaResponseDataType>Text</formulaResponseDataType>
+    <name>What was the receipt number?</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

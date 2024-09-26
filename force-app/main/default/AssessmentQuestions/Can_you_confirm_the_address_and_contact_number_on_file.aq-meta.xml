@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Can you confirm the address and contact number?</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Can you confirm the address and contact number?</questionText>
+        <responseValues>Yes
+No</responseValues>
+        <status>Active</status>
+        <versionNumber>2</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Radio</dataType>
+    <developerName>Can_you_confirm_the_address_and_contact_number_on_file</developerName>
+    <formulaResponseDataType>Boolean</formulaResponseDataType>
+    <name>Can you confirm the address and contact number on file</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

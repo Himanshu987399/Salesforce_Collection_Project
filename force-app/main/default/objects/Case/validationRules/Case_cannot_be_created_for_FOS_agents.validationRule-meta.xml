@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_cannot_be_created_for_FOS_agents</fullName>
+    <active>true</active>
+    <description>Case_can&apos;t_be_created_for_FOS_agents (Contact)</description>
+    <errorConditionFormula>AND(ISNEW(),Contact.RecordType.DeveloperName = &apos;FOS&apos;)</errorConditionFormula>
+    <errorMessage>You can&apos;t create a case for FOS agent</errorMessage>
+</ValidationRule>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>When did you make the payment</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>When did you make the payment?</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>DateTime</dataType>
+    <developerName>When_did_you_make_the_payment</developerName>
+    <formulaResponseDataType>Text</formulaResponseDataType>
+    <name>When did you make the payment?</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

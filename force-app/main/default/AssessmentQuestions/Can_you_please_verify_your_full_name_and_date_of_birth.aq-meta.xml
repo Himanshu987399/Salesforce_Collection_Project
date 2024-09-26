@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Can you please verify your full name and date of birth</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Can you please verify your full name and date of birth?</questionText>
+        <responseValues>Yes
+No</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Radio</dataType>
+    <developerName>Can_you_please_verify_your_full_name_and_date_of_birth</developerName>
+    <formulaResponseDataType>Boolean</formulaResponseDataType>
+    <name>Can you please verify your full name and date of birth?</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

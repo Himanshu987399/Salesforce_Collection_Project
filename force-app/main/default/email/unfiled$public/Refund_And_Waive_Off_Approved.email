@@ -1,0 +1,9 @@
+Dear {!Refund_and_Waive_off_Request__c.CreatedBy},
+
+I hope this email finds you well. I'm writing to inform you that a refund and waive off record has been approved
+
+Refund And Waive Off  Record Details:
+- Record Name: {!Refund_and_Waive_off_Request__c.Name}
+- Details Link: {!Refund_and_Waive_off_Request__c.Link}
+
+Thank you,

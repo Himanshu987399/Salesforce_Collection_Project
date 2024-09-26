@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkSkillRouting xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isActive>true</isActive>
+    <masterLabel>Case Routing</masterLabel>
+    <relatedEntity>Case</relatedEntity>
+    <workSkillRoutingAttributes>
+        <field>Case.Product_Type__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>Auto_Loan_Skill</skill>
+        <skillLevel>1</skillLevel>
+        <value>Auto Loan</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Product_Type__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>Personal_Loan</skill>
+        <skillLevel>1</skillLevel>
+        <value>Personal Loan</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Product_Type__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>Credit_Card</skill>
+        <skillLevel>1</skillLevel>
+        <value>Credit Card</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Product_Type__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>Business_Loan</skill>
+        <skillLevel>1</skillLevel>
+        <value>Business Loan</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.Product_Type__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>Gold_Loan</skill>
+        <skillLevel>1</skillLevel>
+        <value>Gold Loan</value>
+    </workSkillRoutingAttributes>
+</WorkSkillRouting>

@@ -1,0 +1,32 @@
+.timer-container {
+    text-align: center;
+    padding-top: 23px;
+}
+
+.circular-progress {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time-display {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.button-container {
+    margin-top: 20px;
+}

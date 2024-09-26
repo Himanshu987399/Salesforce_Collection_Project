@@ -1,0 +1,47 @@
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </template>
+    <div>
+        <lightning-radio-group label="Can you pay the amount online now ?" value={paymentValue} options={amountOption} disabled={amountDisabledOption} onchange={handleChange}
+            required type="button" >
+        </lightning-radio-group>
+    </div>
+    <div if:true={showfirstScreen}>
+        <div>
+            <lightning-combobox required label="Desired Payment Amount?" value={defaultPaymentOption}
+                placeholder="Please Select Payment" options={paymentOption} onchange={handleChange}
+                disabled={comoboxDisabled}></lightning-combobox>
+        </div>
+        <div>
+            <lightning-input class="inputData" value={amount} disabled={amountDisabled} required type="number"
+                variant="standard" name="amount" label="Amount to Paid?" onchange={handleChange}></lightning-input>
+        </div>
+        <div class="slds-align_absolute-center">
+            <lightning-button variant="brand" label="Send Payment Link" title="titleName" onclick={handleClick}
+                disabled={sendPaymentButton}></lightning-button>
+        </div>
+    </div>
+    <div if:true={showSecondScreen} class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_4-of-6">
+            <lightning-combobox name="progress" label="Payment Status" value={value} placeholder="Select Progress"
+                options={options} disabled={isDisabledCombo}></lightning-combobox>
+        </div>
+        <div class="slds-col slds-size_1-of-6 slds-grid slds-grid_align-end" style="margin-top:23px">
+            <lightning-button label="Get Payment Status" title="Close" class="slds-m-left_x-small"
+                disabled={isDisabledStatusButton} onclick={fetchDataFromApi}>
+            </lightning-button>
+        </div>
+        <template if:true={showTimer}>
+            <div class="slds-col slds-size_1-of-6 slds-grid slds-grid_align-end">
+                <div class="timer-container">
+                    <div class="circular-progress" style={circleStyle}>
+                        <div class="inner-circle">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

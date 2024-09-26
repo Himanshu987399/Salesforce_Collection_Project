@@ -1,0 +1,9 @@
+Dear {!Case.OwnerFullName},
+
+I hope this email finds you well. I'm writing to inform you that a case dispute record has been rejected 
+
+Case Record Details:
+- Record Name: {!Case.CaseNumber}
+- Details Link: {!Case.Link}
+
+Thank you

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Agents_Not_Avaiable</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Agents Not Avaiable</shortDescription>
+        <value>All agents are currently occupied, the case has been placed in the queue.</value>
+    </labels>
+    <labels>
+        <fullName>Approved</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Approved</shortDescription>
+        <value>Approved</value>
+    </labels>
+    <labels>
+        <fullName>FinancialAccountType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FinancialAccountType</shortDescription>
+        <value>EMI</value>
+    </labels>
+    <labels>
+        <fullName>Pending_For_Approval</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pending For Approval</shortDescription>
+        <value>Pending for approval</value>
+    </labels>
+    <labels>
+        <fullName>Assigend_FOS_Successfully</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Assigend FOS Successfully</shortDescription>
+        <value>Case has been assigned to a FOS agent.</value>
+    </labels>
+    <labels>
+        <fullName>Assign_Manager</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Assign Manager</shortDescription>
+        <value>Please assign a manager to initiate the approval process. Currently, no manager is assigned for approvals.</value>
+    </labels>
+    <labels>
+        <fullName>Bank_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bank Name</shortDescription>
+        <value>HDFC Bank</value>
+    </labels>
+    <labels>
+        <fullName>Batch_Error_Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Batch Error Email</shortDescription>
+        <value>himanshu1.s@techmatrixconsulting.com</value>
+    </labels>
+    <labels>
+        <fullName>Case_Entitlement_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Entitlement Name</shortDescription>
+        <value>Case Entitlement V2</value>
+    </labels>
+    <labels>
+        <fullName>Challan_Doc_Template</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Challan Doc Template</shortDescription>
+        <value>Challan Doc Template</value>
+    </labels>
+    <labels>
+        <fullName>Challan_IP_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Challan_IP_Name</shortDescription>
+        <value>ChallanDocument_Generate</value>
+    </labels>
+    <labels>
+        <fullName>Comment_is_mandatory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Comment is mandatory</shortDescription>
+        <value>Comment is mandatory</value>
+    </labels>
+    <labels>
+        <fullName>Daily_Case_Assign_Limit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Daily Case Assign Limit To FOS</shortDescription>
+        <value>10</value>
+    </labels>
+    <labels>
+        <fullName>DebitCreditIndicator</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DebitCreditIndicator</shortDescription>
+        <value>Credit</value>
+    </labels>
+    <labels>
+        <fullName>DebitIndicator</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DebitIndicator</shortDescription>
+        <value>Debit</value>
+    </labels>
+    <labels>
+        <fullName>Email_Missing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Missing</shortDescription>
+        <value>Email is missing on contact</value>
+    </labels>
+    <labels>
+        <fullName>FOS_Agent_Assigned</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FOS Agent Assigned</shortDescription>
+        <value>Already FOS agent assigned to case</value>
+    </labels>
+    <labels>
+        <fullName>FOS_Agent_Queue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FOS Agent Queue</shortDescription>
+        <value>Handling_FOS_Agent_Queue</value>
+    </labels>
+    <labels>
+        <fullName>FetchDataTime</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FetchDataTime</shortDescription>
+        <value>15</value>
+    </labels>
+    <labels>
+        <fullName>Financial_Account_Not_Found</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Financial Account Not Found</shortDescription>
+        <value>Financial account record is not found on case</value>
+    </labels>
+    <labels>
+        <fullName>IP_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IP Name</shortDescription>
+        <value>DocumentServiceGateway_DocGeneration</value>
+    </labels>
+    <labels>
+        <fullName>Limit_send_payment</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Limit send payment</shortDescription>
+        <value>50000</value>
+    </labels>
+    <labels>
+        <fullName>No_Banker_Found</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Banker Found</shortDescription>
+        <value>No banker found</value>
+    </labels>
+    <labels>
+        <fullName>No_Branch_Pincode_Found</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Branch-Pincode Found</shortDescription>
+        <value>No branch-pincode mapping found</value>
+    </labels>
+    <labels>
+        <fullName>No_Business_Unit_Found</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Business Unit Found</shortDescription>
+        <value>No business unit member found</value>
+    </labels>
+    <labels>
+        <fullName>No_Case_Found</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Case Found</shortDescription>
+        <value>No case found with the provided ID</value>
+    </labels>
+    <labels>
+        <fullName>No_Contact_Found_Againt_Banker</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Contact Found Againt Banker</shortDescription>
+        <value>No contact found againt related banker</value>
+    </labels>
+    <labels>
+        <fullName>No_Related_Contact_Found</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Related Contact Found</shortDescription>
+        <value>No related contact found for the case</value>
+    </labels>
+    <labels>
+        <fullName>Pay_Partial_Amount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pay Partial Amount</shortDescription>
+        <value>Pay Partial Amount</value>
+    </labels>
+    <labels>
+        <fullName>Pay_the_Entire_Amount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pay the Entire Amount</shortDescription>
+        <value>Pay the Entire Amount</value>
+    </labels>
+    <labels>
+        <fullName>Payment_Time_Out</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Payment Time Out</shortDescription>
+        <value>60</value>
+    </labels>
+    <labels>
+        <fullName>Permission_Set_Group_Call_Center</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Permission Set Group Call Center</shortDescription>
+        <value>Call_Center_Permission_Set_Group</value>
+    </labels>
+    <labels>
+        <fullName>Permission_Set_Group_Supervisor</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Permission Set Group Supervisor</shortDescription>
+        <value>Supervisor_Permission_Set_Group</value>
+    </labels>
+    <labels>
+        <fullName>Permission_Set_Group_Team_Lead</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Permission Set Group Team Lead</shortDescription>
+        <value>Team_Lead_Permission_Set_Group</value>
+    </labels>
+    <labels>
+        <fullName>Phone_Number_Missing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Phone Number Missing</shortDescription>
+        <value>Phone number is missing on contact</value>
+    </labels>
+    <labels>
+        <fullName>Postal_Code_Missing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Postal Code Missing</shortDescription>
+        <value>The related contact postal code is missing</value>
+    </labels>
+    <labels>
+        <fullName>Receipt_IP_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Receipt IP Name</shortDescription>
+        <value>ReceiptDocument_Collection</value>
+    </labels>
+    <labels>
+        <fullName>Reciept_Doc_Template</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Reciept Doc Template</shortDescription>
+        <value>Reciept Doc Template</value>
+    </labels>
+    <labels>
+        <fullName>Role_Name_Call_Center</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Role Name Call Center</shortDescription>
+        <value>Call_Center_Agent</value>
+    </labels>
+    <labels>
+        <fullName>Role_Name_Supervisor</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Role Name Supervisor</shortDescription>
+        <value>Supervisor</value>
+    </labels>
+    <labels>
+        <fullName>Role_Name_Team_Lead</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Role Name Team Lead</shortDescription>
+        <value>Team_Lead</value>
+    </labels>
+    <labels>
+        <fullName>Send_Payment_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Send Payment Link</shortDescription>
+        <value>Send Payment Link</value>
+    </labels>
+    <labels>
+        <fullName>Something_went_wrong</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Something went wrong</shortDescription>
+        <value>Something went wrong</value>
+    </labels>
+    <labels>
+        <fullName>Something_went_wrong_Case_ID_not_found</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Something went wrong, Case ID not found.</shortDescription>
+        <value>Something went wrong, Case ID not found.</value>
+    </labels>
+    <labels>
+        <fullName>Success_Message_of_payment</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Success Message of payment</shortDescription>
+        <value>The payment link has been sent successfully to the customer&apos;s email address and phone number.</value>
+    </labels>
+    <labels>
+        <fullName>Successfully_created_refund_and_waiver</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Successfully created refund and waiver</shortDescription>
+        <value>The refund and waiver request has been successfully initiated. A refund and waiver record has also been created.</value>
+    </labels>
+    <labels>
+        <fullName>Under_Payment_Process</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Under Payment Process</shortDescription>
+        <value>Under Payment Process</value>
+    </labels>
+</CustomLabels>

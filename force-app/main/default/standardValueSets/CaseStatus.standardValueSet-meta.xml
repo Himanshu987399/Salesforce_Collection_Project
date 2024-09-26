@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Open</fullName>
+        <default>true</default>
+        <label>Open</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Promise To Pay (PTP)</fullName>
+        <default>false</default>
+        <label>Promise To Pay (PTP)</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Assigned to FOS Agent</fullName>
+        <default>false</default>
+        <label>Assigned to FOS Agent</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Under Payment Process</fullName>
+        <default>false</default>
+        <label>Under Payment Process</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Under Dispute</fullName>
+        <default>false</default>
+        <label>Under Dispute</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Under Settlement</fullName>
+        <default>false</default>
+        <label>Under Settlement</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Legal Notice Sent</fullName>
+        <default>false</default>
+        <label>Legal Notice Sent</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Repossession Initiated</fullName>
+        <default>false</default>
+        <label>Repossession Initiated</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Paid</fullName>
+        <default>false</default>
+        <label>Paid</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Partially Paid</fullName>
+        <default>false</default>
+        <label>Partially Paid</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Settled</fullName>
+        <default>false</default>
+        <label>Settled</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Settlement Rejected</fullName>
+        <color>#FF0000</color>
+        <default>false</default>
+        <label>Settlement Rejected</label>
+        <closed>true</closed>
+    </standardValue>
+</StandardValueSet>

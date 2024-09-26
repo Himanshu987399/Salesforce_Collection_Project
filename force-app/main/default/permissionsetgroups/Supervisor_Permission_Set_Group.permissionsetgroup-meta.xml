@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Supervisor Permission Set Group</label>
+    <permissionSets>Supervisor_Permission_Set</permissionSets>
+    <permissionSets>force__DocGenDesigner</permissionSets>
+    <permissionSets>force__DocGenUser</permissionSets>
+    <permissionSets>force__DocumentChecklist</permissionSets>
+    <permissionSets>force__OmniStudioAdmin</permissionSets>
+    <permissionSets>force__OmniStudioExecution</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Case_Dispute_Approved_Email</fullName>
+        <description>Case Dispute Approved Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Case_Dispute_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Dispute_Rejected_Email</fullName>
+        <description>Case Dispute Rejected Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Case_Dispute_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Milestone_Email</fullName>
+        <description>Case Milestone Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Case_Milestone_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Dispute_Email_Rejected</fullName>
+        <description>Dispute Email Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Case_Dispute_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_On_Approved</fullName>
+        <description>Email On Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Settlement_Record_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_To_Owner</fullName>
+        <description>Email To Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Case_Milestone_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_on_Rejected</fullName>
+        <description>Email on Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Settlement_Record_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Mail</fullName>
+        <description>Send Mail</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Case_Milestone_Template</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approved_status</fullName>
+        <field>Dispute_Status__c</field>
+        <literalValue>Dispute Approved</literalValue>
+        <name>Approved status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Assigned_to_Queue</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Dispute_Approved_queue</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Case Assigned to Queue</name>
+        <notifyAssignee>true</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Dispute_Status_Approved</fullName>
+        <field>Dispute_Status__c</field>
+        <literalValue>Dispute Approved</literalValue>
+        <name>Case Dispute Status Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Dispute_Status_Rejected</fullName>
+        <field>Dispute_Status__c</field>
+        <literalValue>Dispute Rejected</literalValue>
+        <name>Case Dispute Status Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Recall</fullName>
+        <field>Status</field>
+        <literalValue>Open</literalValue>
+        <name>Case Recall</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    
+    <fieldUpdates>
+        <fullName>Pending_for_approval</fullName>
+        <field>Settelment__c</field>
+        <literalValue>Pending for approval</literalValue>
+        <name>Pending for approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected_Status</fullName>
+        <field>Dispute_Status__c</field>
+        <literalValue>Dispute Rejected</literalValue>
+        <name>Rejected Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_of_Case</fullName>
+        <field>Status</field>
+        <literalValue>Open</literalValue>
+        <name>Status of Case</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_of_Case_Update</fullName>
+        <field>Status</field>
+        <literalValue>Open</literalValue>
+        <name>Status of Case Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Rejected_status</fullName>
+        <field>Settelment__c</field>
+        <literalValue>Settlement Rejected</literalValue>
+        <name>Update Rejected status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status</fullName>
+        <field>Status</field>
+        <literalValue>Settlement Rejected</literalValue>
+        <name>Update Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_status_Approved</fullName>
+        <field>Settelment__c</field>
+        <literalValue>Settlement Approved</literalValue>
+        <name>Update status Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <tasks>
+        <fullName>Follow_up_Task</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Follow up Task for dispute rejection</subject>
+    </tasks>
+</Workflow>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FOS_Disposition__c</fullName>
+    <label>FOS Disposition</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Full Payment</fullName>
+                <default>false</default>
+                <label>Full Payment</label>
+            </value>
+            <value>
+                <fullName>Partial Payment</fullName>
+                <default>false</default>
+                <label>Partial Payment</label>
+            </value>
+            <value>
+                <fullName>Customer Not Available</fullName>
+                <default>false</default>
+                <label>Customer Not Available</label>
+            </value>
+            <value>
+                <fullName>Customer willing to pay on another date</fullName>
+                <default>false</default>
+                <label>Customer willing to pay on another date</label>
+            </value>
+            <value>
+                <fullName>Customer Refused to Pay</fullName>
+                <default>false</default>
+                <label>Customer Refused to Pay</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Reschedule on same day</fullName>
+                <default>false</default>
+                <label>Reschedule on same day</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

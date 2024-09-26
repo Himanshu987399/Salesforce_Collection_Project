@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : null,
+  &quot;timeStamp&quot; : &quot;2024-08-09T09:26:29.046Z&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZoneName&quot; : &quot;Asia/Kolkata&quot;,
+  &quot;userTimeZone&quot; : &quot;330&quot;,
+  &quot;userCurrencyCode&quot; : &quot;INR&quot;,
+  &quot;userName&quot; : &quot;yash.s@coll.dev&quot;,
+  &quot;userId&quot; : &quot;00572000006tqYnAAI&quot;,
+  &quot;omniProcessId&quot; : &quot;0jN720000003MyTEAU&quot;,
+  &quot;localTimeZoneName&quot; : &quot;Asia/Calcutta&quot;,
+  &quot;Step2&quot; : null,
+  &quot;recordId&quot; : &quot;&quot;,
+  &quot;Step1&quot; : {
+    &quot;ContactDetails&quot; : null,
+    &quot;Can_you_please_verify_your_full_name_and_date_of_birth&quot; : null,
+    &quot;Can_you_confirm_the_address_and_contact_number_on_file&quot; : null,
+    &quot;What_is_your_loan_account_number&quot; : null,
+    &quot;Did_the_call_get_answered&quot; : &quot;No&quot;,
+    &quot;Call_Center_Disposition&quot; : &quot;Customer disputes that payment has already been made or there is no OD&quot;,
+    &quot;Comments&quot; : &quot;dsfsdf&quot;
+  },
+  &quot;recordType&quot; : &quot;01272000000axcfAAA&quot;,
+  &quot;DataRaptorTaskRecordType&quot; : &quot;&quot;,
+  &quot;DRId_Task&quot; : &quot;00T72000007sznIEAQ&quot;,
+  &quot;assessmentId&quot; : &quot;0U37200000001IfCAI&quot;,
+  &quot;response&quot; : {
+    &quot;Assessment_1&quot; : [ {
+      &quot;Name&quot; : &quot;Call with Customer On Fri Aug 09 00:00:00 GMT 2024&quot;,
+      &quot;AssessmentStatus&quot; : &quot;Completed&quot;,
+      &quot;UpsertSuccess&quot; : true,
+      &quot;Id&quot; : &quot;0U37200000001IfCAI&quot;,
+      &quot;UpsertSObjectType&quot; : &quot;Assessment&quot;
+    } ],
+    &quot;error&quot; : &quot;OK&quot;,
+    &quot;responseType&quot; : &quot;SObject&quot;,
+    &quot;rolledBack&quot; : false
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>CreateLogCallTask</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateLogCallTaskCustom2836</globalKey>
+        <inputFieldName>CallCenterDisposition</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateLogCallTask</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Call_Center_Disposition__c</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateLogCallTaskCustom9985</globalKey>
+        <inputFieldName>dueDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateLogCallTask</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ActivityDate</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Completed</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateLogCallTaskCustom7412</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateLogCallTask</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| TODAY</formulaConverted>
+        <formulaExpression>TODAY()</formulaExpression>
+        <formulaResultPath>dueDate</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>CreateLogCallTaskCustom7171</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateLogCallTask</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateLogCallTaskCustom6062</globalKey>
+        <inputFieldName>ContextId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateLogCallTask</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>WhatId</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateLogCallTaskCustom7311</globalKey>
+        <inputFieldName>ContactId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateLogCallTask</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>WhoId</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &quot;Call/\/\/With/\/\/&quot; var:ContactName &quot;/\/\/On/\/\//\/\/&quot; | | NOW FORMATDATETIME CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(&quot;Call With &quot;, ContactName, &quot; On  &quot;, FORMATDATETIME(NOW()))</formulaExpression>
+        <formulaResultPath>subject</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>CreateLogCallTaskCustom8771</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateLogCallTask</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateLogCallTaskCustom4549</globalKey>
+        <inputFieldName>Step1:Comments</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateLogCallTask</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Description</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateLogCallTaskCustom5602</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateLogCallTask</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateLogCallTaskCustom3622</globalKey>
+        <inputFieldName>recordType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateLogCallTask</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordTypeId</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateLogCallTaskCustom4579</globalKey>
+        <inputFieldName>subject</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateLogCallTask</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Subject</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Call</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateLogCallTaskCustom6103</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateLogCallTask</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>TaskSubtype</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateLogCallTaskCustom4966</globalKey>
+        <inputFieldName>Step2:Call_Description</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateLogCallTask</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Call_Description__c</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;vlcTimeTracking&quot; : {
+    &quot;DataMapperPostAction2&quot; : null,
+    &quot;NavigateAction1&quot; : null,
+    &quot;SetValues&quot; : null,
+    &quot;DataMapperPostAction1&quot; : null,
+    &quot;IntegrationProcedureAction1&quot; : null,
+    &quot;SetRecordId&quot; : null,
+    &quot;Step2&quot; : null,
+    &quot;Save-Responses&quot; : null,
+    &quot;Step1&quot; : null
+  },
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;userTimeZone&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;timeStamp&quot; : null,
+  &quot;ContextId&quot; : null,
+  &quot;Step2&quot; : {
+    &quot;Have_you_paid_your_recent_EMI&quot; : null,
+    &quot;Block1&quot; : {
+      &quot;CustomLWC1&quot; : null
+    },
+    &quot;Do_you_promise_to_pay&quot; : null,
+    &quot;Amount_to_Paid&quot; : null,
+    &quot;How_much_do_you_want_to_pay&quot; : null,
+    &quot;Can_you_pay_the_amount_online_now&quot; : null,
+    &quot;What_was_the_reason_for_the_delay&quot; : null,
+    &quot;What_was_the_receipt_number&quot; : null,
+    &quot;What_was_the_payment_mode&quot; : null,
+    &quot;What_will_be_the_payment_mode&quot; : null,
+    &quot;When_would_you_be_able_to_make_your_next_payment&quot; : null,
+    &quot;When_did_you_make_the_payment&quot; : null
+  },
+  &quot;Step1&quot; : {
+    &quot;Call_Center_Disposition&quot; : null,
+    &quot;What_is_your_loan_account_number&quot; : null,
+    &quot;Can_you_confirm_the_address_and_contact_number_on_file&quot; : null,
+    &quot;Can_you_please_verify_your_full_name_and_date_of_birth&quot; : null,
+    &quot;Comments&quot; : null,
+    &quot;Did_the_call_get_answered&quot; : null
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>CreateLogCallTask_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

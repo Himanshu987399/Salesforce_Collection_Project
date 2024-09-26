@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Call Description</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Call Description</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>TextArea</dataType>
+    <developerName>Call_Description</developerName>
+    <formulaResponseDataType>Text</formulaResponseDataType>
+    <name>Call Description</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_FOS_Disposition__c</fullName>
+    <label>Other FOS Disposition</label>
+    <required>false</required>
+    <type>TextArea</type>
+</CustomField>

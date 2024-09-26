@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Have you paid your recent EMI</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Have you paid your recent EMI?</questionText>
+        <responseValues>Yes
+No</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Radio</dataType>
+    <developerName>Have_you_paid_your_recent_EMI</developerName>
+    <formulaResponseDataType>Boolean</formulaResponseDataType>
+    <name>Have you paid your recent EMI?</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

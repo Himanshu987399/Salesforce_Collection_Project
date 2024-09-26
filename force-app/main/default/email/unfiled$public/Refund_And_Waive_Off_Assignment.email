@@ -1,0 +1,11 @@
+Dear {!ApprovalRequest.Process_Approver},
+
+I hope this email finds you well. I'm writing to inform you that a refund and waive off record has been assigned to you in our Salesforce system for approved/rejected refund and waive off. Please review and take necessary action on this record at your earliest convenience.
+
+Refund and Waive Off Record Details:
+- Record Name: {!Refund_and_Waive_off_Request__c.Name}
+- Details Link: {!Refund_and_Waive_off_Request__c.Link}
+
+You can access the Case record directly by clicking on the following link: {!ApprovalRequest.External_URL}
+
+Thank you for your prompt attention to this matter.

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visit</fullName>
+    <active>true</active>
+    <label>Visit</label>
+    <picklistValues>
+        <picklist>Are_there_any_technical_issues_preventin__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Are_you_willing_to_commit_to_a_promise_t__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Call_Center_Disposition__c</picklist>
+        <values>
+            <fullName>Could not connect with the customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer asks to arrange for a pick up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer asks to call back</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer asks to reach out for a third party to follow up for the payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer completed online payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer disputes that payment has already been made or there is no OD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer promises to pay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer refuses to pay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer reports a theft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer reports an accident</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reminder Given</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Someone informs that the customer has expired</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FOS_Disposition__c</picklist>
+        <values>
+            <fullName>Customer Not Available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Refused to Pay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer willing to pay on another date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partial Payment</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Method__c</picklist>
+        <values>
+            <fullName>Cash</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cheque</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit%2FDebit card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UPI</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Mode__c</picklist>
+        <values>
+            <fullName>Offline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Normal</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subject</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Letter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Quote</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Visit_Status__c</picklist>
+        <values>
+            <fullName>Canceled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

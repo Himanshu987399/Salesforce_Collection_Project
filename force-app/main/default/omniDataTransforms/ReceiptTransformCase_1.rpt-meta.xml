@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>ReceiptTransformCase</name>
+    <nullInputsIncludedInOutput>true</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | | | TODAY DAY 10 &lt; &apos;0&apos; | | | TODAY DAY TOSTRING + | | | TODAY DAY TOSTRING IF TOSTRING</formulaConverted>
+        <formulaExpression>TOSTRING(IF(DAY(TODAY()) &lt; 10, &apos;0&apos; + TOSTRING(DAY(TODAY())), TOSTRING(DAY(TODAY()))))</formulaExpression>
+        <formulaResultPath>dayValue</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>ReceiptTransformCase47615492284162997</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ReceiptTransformCase</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>LIMIT</filterOperator>
+        <filterValue>1</filterValue>
+        <globalKey>ReceiptTransformCase7526804844177206</globalKey>
+        <inputObjectName>Case</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ReceiptTransformCase</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>case</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:FormAPI true != false true IF</formulaConverted>
+        <formulaExpression>IF(FormAPI != true, false,true)</formulaExpression>
+        <formulaResultPath>showReceipt</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>ReceiptTransformCaseCustom4248</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ReceiptTransformCase</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>objectId</filterValue>
+        <globalKey>ReceiptTransformCase2812074102261235</globalKey>
+        <inputFieldName>Id</inputFieldName>
+        <inputObjectName>Case</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ReceiptTransformCase</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>case</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ReceiptTransformCaseCustom1003</globalKey>
+        <inputFieldName>CustomerNameLegal</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ReceiptTransformCase</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>TokenData:CustomerNameLegal</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:dayValue &apos;/&apos; + var:monthValue + &apos;/&apos; + | | | TODAY YEAR TOSTRING + TOSTRING</formulaConverted>
+        <formulaExpression>TOSTRING(dayValue +&apos;/&apos;+ monthValue+&apos;/&apos;+TOSTRING(YEAR(TODAY())))</formulaExpression>
+        <formulaResultPath>TodayDate</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>ReceiptTransformCaseCustom8890</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ReceiptTransformCase</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ReceiptTransformCaseCustom3320</globalKey>
+        <inputFieldName>CustomerAddressLegal</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ReceiptTransformCase</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>TokenData:CustomerAddressLegal</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:FormAPI true != true false IF</formulaConverted>
+        <formulaExpression>IF(FormAPI != true, true,false)</formulaExpression>
+        <formulaResultPath>showInfo</formulaResultPath>
+        <formulaSequence>5.0</formulaSequence>
+        <globalKey>ReceiptTransformCaseCustom4342</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ReceiptTransformCase</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | | | TODAY MONTH 10 &lt; &apos;0&apos; | | | TODAY MONTH TOSTRING + | | | TODAY MONTH TOSTRING IF TOSTRING</formulaConverted>
+        <formulaExpression>TOSTRING(IF(MONTH(TODAY()) &lt; 10, &apos;0&apos; + TOSTRING(MONTH(TODAY())), TOSTRING(MONTH(TODAY()))))</formulaExpression>
+        <formulaResultPath>monthValue</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>ReceiptTransformCaseCustom9123</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ReceiptTransformCase</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ReceiptTransformCaseCustom3387</globalKey>
+        <inputFieldName>EMIAmountLegal</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ReceiptTransformCase</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>TokenData:EMIAmountLegal</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ReceiptTransformCaseCustom4512</globalKey>
+        <inputFieldName>CaseOwnerNameLegal</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ReceiptTransformCase</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>TokenData:CaseOwnerNameLegal</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>[ {
+  &quot;CustomerAddress&quot; : &quot;  201102 &quot;,
+  &quot;TotalPaymentAmount&quot; : 1230,
+  &quot;ChargesData&quot; : {
+    &quot;ChargesAmount&quot; : &quot;&quot;
+  },
+  &quot;TotalChargesAmount&quot; : 0,
+  &quot;TransactionData&quot; : [ {
+    &quot;TransactionDate&quot; : &quot;&quot;,
+    &quot;Transaction_Date__c&quot; : &quot;16/9/2024&quot;,
+    &quot;Status__c&quot; : &quot;Paid&quot;,
+    &quot;Id&quot; : &quot;a0F7200000396HPEAY&quot;,
+    &quot;PaymentMethod&quot; : &quot;&quot;,
+    &quot;PaymentType&quot; : &quot;&quot;,
+    &quot;CreatedDate&quot; : &quot;2024-09-16T08:03:37.000Z&quot;,
+    &quot;Case__c&quot; : &quot;5007200000Oy3LOAAZ&quot;,
+    &quot;FinServ__Amount__c&quot; : 1230,
+    &quot;TransactionId&quot; : &quot;&quot;,
+    &quot;Name&quot; : &quot;T-000019503&quot;,
+    &quot;Payment_Option__c&quot; : &quot;Pay the Entire Amount&quot;,
+    &quot;Amount&quot; : &quot;&quot;,
+    &quot;BankName&quot; : &quot;&quot;,
+    &quot;Payment_Method__c&quot; : &quot;Cheque&quot;
+  } ],
+  &quot;CreatedDate&quot; : &quot;2024-09-16T08:03:47.000Z&quot;,
+  &quot;FullName&quot; : &quot;Himanshu Rai&quot;,
+  &quot;showCharges&quot; : false,
+  &quot;RefundData&quot; : {
+    &quot;Type&quot; : &quot;&quot;
+  },
+  &quot;WaiveOffAmount&quot; : 0,
+  &quot;EMIAmount&quot; : 678,
+  &quot;TotalAmount&quot; : 1230,
+  &quot;showRefunds&quot; : false,
+  &quot;DenominationData&quot; : [ {
+    &quot;Quantity&quot; : 0,
+    &quot;DenominationValue&quot; : 1
+  }, {
+    &quot;Quantity&quot; : 0,
+    &quot;DenominationValue&quot; : 2
+  }, {
+    &quot;Quantity&quot; : 0,
+    &quot;DenominationValue&quot; : 5
+  }, {
+    &quot;Quantity&quot; : 3,
+    &quot;DenominationValue&quot; : 10
+  }, {
+    &quot;Quantity&quot; : 0,
+    &quot;DenominationValue&quot; : 20
+  }, {
+    &quot;Quantity&quot; : 0,
+    &quot;DenominationValue&quot; : 50
+  }, {
+    &quot;Quantity&quot; : 0,
+    &quot;DenominationValue&quot; : 100
+  }, {
+    &quot;Quantity&quot; : 1,
+    &quot;DenominationValue&quot; : 200
+  }, {
+    &quot;Quantity&quot; : 2,
+    &quot;DenominationValue&quot; : 500
+  } ],
+  &quot;ChargesType&quot; : &quot;&quot;,
+  &quot;showInfo&quot; : true,
+  &quot;AccountId&quot; : &quot;0017200000YKYV5AAP&quot;,
+  &quot;showRecieptN&quot; : false
+}, {
+  &quot;CustomerAddress&quot; : &quot;  201102 &quot;,
+  &quot;TotalPaymentAmount&quot; : 1230,
+  &quot;ChargesData&quot; : {
+    &quot;ChargesAmount&quot; : &quot;&quot;
+  },
+  &quot;TotalChargesAmount&quot; : 0,
+  &quot;TransactionData&quot; : [ {
+    &quot;TransactionDate&quot; : &quot;&quot;,
+    &quot;Transaction_Date__c&quot; : &quot;16/9/2024&quot;,
+    &quot;Status__c&quot; : &quot;Paid&quot;,
+    &quot;Id&quot; : &quot;a0F7200000396HPEAY&quot;,
+    &quot;PaymentMethod&quot; : &quot;&quot;,
+    &quot;PaymentType&quot; : &quot;&quot;,
+    &quot;CreatedDate&quot; : &quot;2024-09-16T08:03:37.000Z&quot;,
+    &quot;Case__c&quot; : &quot;5007200000Oy3LOAAZ&quot;,
+    &quot;FinServ__Amount__c&quot; : 1230,
+    &quot;TransactionId&quot; : &quot;&quot;,
+    &quot;Name&quot; : &quot;T-000019503&quot;,
+    &quot;Payment_Option__c&quot; : &quot;Pay the Entire Amount&quot;,
+    &quot;Amount&quot; : &quot;&quot;,
+    &quot;BankName&quot; : &quot;&quot;,
+    &quot;Payment_Method__c&quot; : &quot;Cheque&quot;
+  } ],
+  &quot;CreatedDate&quot; : &quot;2024-09-16T08:57:46.000Z&quot;,
+  &quot;FullName&quot; : &quot;Himanshu Rai&quot;,
+  &quot;showCharges&quot; : false,
+  &quot;RefundData&quot; : {
+    &quot;Type&quot; : &quot;&quot;
+  },
+  &quot;WaiveOffAmount&quot; : 0,
+  &quot;EMIAmount&quot; : 678,
+  &quot;TotalAmount&quot; : 1230,
+  &quot;showRefunds&quot; : false,
+  &quot;DenominationData&quot; : [ {
+    &quot;Quantity&quot; : 0,
+    &quot;DenominationValue&quot; : 1
+  }, {
+    &quot;Quantity&quot; : 0,
+    &quot;DenominationValue&quot; : 2
+  }, {
+    &quot;Quantity&quot; : 0,
+    &quot;DenominationValue&quot; : 5
+  }, {
+    &quot;Quantity&quot; : 3,
+    &quot;DenominationValue&quot; : 10
+  }, {
+    &quot;Quantity&quot; : 0,
+    &quot;DenominationValue&quot; : 20
+  }, {
+    &quot;Quantity&quot; : 0,
+    &quot;DenominationValue&quot; : 50
+  }, {
+    &quot;Quantity&quot; : 0,
+    &quot;DenominationValue&quot; : 100
+  }, {
+    &quot;Quantity&quot; : 1,
+    &quot;DenominationValue&quot; : 200
+  }, {
+    &quot;Quantity&quot; : 2,
+    &quot;DenominationValue&quot; : 500
+  } ],
+  &quot;ChargesType&quot; : &quot;&quot;,
+  &quot;showInfo&quot; : true,
+  &quot;AccountId&quot; : &quot;0017200000YKYV5AAP&quot;,
+  &quot;showRecieptN&quot; : false
+} ]</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>ReceiptTransformCase_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Do you promise to pay?</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Do you promise to pay?</questionText>
+        <responseValues>Yes
+No</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Radio</dataType>
+    <developerName>Do_you_promise_to_pay</developerName>
+    <formulaResponseDataType>Boolean</formulaResponseDataType>
+    <name>Do you promise to pay?</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

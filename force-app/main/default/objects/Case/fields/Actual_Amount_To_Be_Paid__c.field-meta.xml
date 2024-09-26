@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Amount_To_Be_Paid__c</fullName>
+    <externalId>false</externalId>
+    <formula>Amount_Paid__c  -  Total_Waive_Off_Amount__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The final payable amount after deducting any refunds and waivers from the original Amount To Be Paid. Calculated as: Amount To Be Paid - Total refunds and waivers</inlineHelpText>
+    <label>Actual Amount To Be Paid</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

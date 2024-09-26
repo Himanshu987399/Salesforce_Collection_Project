@@ -1,0 +1,11 @@
+Dear {!ApprovalRequest.Process_Approver},
+
+I hope this email finds you well. I'm writing to inform you that a case has been assigned to you in our Salesforce system for approved/rejected settlement request. Please review and take necessary action on this record at your earliest convenience.
+
+Case Record Details:
+- Record Name: {!Case.CaseNumber}
+- Details Link: {!Case.Link}
+
+You can access the Case record directly by clicking on the following link: {!ApprovalRequest.External_URL}
+
+Thank you for your prompt attention to this matter.

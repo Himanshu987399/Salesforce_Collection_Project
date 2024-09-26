@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Did the call get answered?</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Did the call get answered?</questionText>
+        <responseValues>Yes
+No</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Radio</dataType>
+    <developerName>Did_the_call_get_answered</developerName>
+    <formulaResponseDataType>Boolean</formulaResponseDataType>
+    <name>Did the call get answered?</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

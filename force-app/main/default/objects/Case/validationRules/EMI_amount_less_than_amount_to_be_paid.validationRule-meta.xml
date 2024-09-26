@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMI_amount_less_than_amount_to_be_paid</fullName>
+    <active>true</active>
+    <errorConditionFormula>Total_EMI_due__c &gt; Amount_Paid__c</errorConditionFormula>
+    <errorMessage>The Total EMI amount should be less than the amount to be paid</errorMessage>
+</ValidationRule>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Call Center Disposition</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Call Center Disposition</questionText>
+        <responseValues>Customer asks to call back
+Customer refuses to pay
+Customer reports a theft
+Customer reports an accident
+Someone informs that the customer has expired</responseValues>
+        <status>Active</status>
+        <versionNumber>2</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Select</dataType>
+    <developerName>Call_Center_Disposition</developerName>
+    <formulaResponseDataType>Text</formulaResponseDataType>
+    <name>Call Center Disposition</name>
+    <questionCategory>Demographic</questionCategory>
+</AssessmentQuestion>

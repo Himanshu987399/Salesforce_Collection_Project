@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>What was the reason for the delay?</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>What was the reason for the delay?</questionText>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>TextArea</dataType>
+    <developerName>What_was_the_reason_for_the_delay</developerName>
+    <formulaResponseDataType>Text</formulaResponseDataType>
+    <name>What was the reason for the delay?</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

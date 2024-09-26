@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentQuestion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assessmentQuestionVersion>
+        <isActive>true</isActive>
+        <name>Can you pay the amount online now</name>
+        <optionSourceResponseValue>false</optionSourceResponseValue>
+        <questionText>Can you pay the amount online now?</questionText>
+        <responseValues>Yes
+No</responseValues>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </assessmentQuestionVersion>
+    <dataType>Radio</dataType>
+    <developerName>Can_you_pay_the_amount_online_now</developerName>
+    <formulaResponseDataType>Boolean</formulaResponseDataType>
+    <name>Can you pay the amount online now?</name>
+    <questionCategory>Financial</questionCategory>
+</AssessmentQuestion>

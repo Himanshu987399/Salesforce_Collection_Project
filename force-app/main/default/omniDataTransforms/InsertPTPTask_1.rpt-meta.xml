@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : null,
+  &quot;paymentId&quot; : null,
+  &quot;timeStamp&quot; : &quot;2024-08-28T09:18:19.572Z&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZoneName&quot; : &quot;Asia/Kolkata&quot;,
+  &quot;userTimeZone&quot; : &quot;330&quot;,
+  &quot;userCurrencyCode&quot; : &quot;INR&quot;,
+  &quot;userName&quot; : &quot;raghuveer.r@force.com.staging&quot;,
+  &quot;userId&quot; : &quot;005dN000000Vh3uQAC&quot;,
+  &quot;omniProcessId&quot; : &quot;0jN720000003SSnEAM&quot;,
+  &quot;localTimeZoneName&quot; : &quot;Asia/Calcutta&quot;,
+  &quot;Step2&quot; : {
+    &quot;When_did_you_make_the_payment&quot; : null,
+    &quot;What_was_the_payment_mode&quot; : null,
+    &quot;What_was_the_receipt_number&quot; : null,
+    &quot;What_was_the_reason_for_the_delay&quot; : null,
+    &quot;Can_you_pay_the_amount_online_now&quot; : &quot;No&quot;,
+    &quot;How_much_do_you_want_to_pay&quot; : null,
+    &quot;Amount_to_Paid&quot; : null,
+    &quot;Do_you_promise_to_pay&quot; : &quot;Yes&quot;,
+    &quot;When_would_you_be_able_to_make_your_next_payment&quot; : &quot;2024-08-30&quot;,
+    &quot;What_will_be_the_payment_mode&quot; : &quot;Online&quot;,
+    &quot;Call_Center_Disposition&quot; : null,
+    &quot;CustomLWC2&quot; : null,
+    &quot;Have_you_paid_your_recent_EMI&quot; : &quot;No&quot;
+  },
+  &quot;recordId&quot; : &quot;&quot;,
+  &quot;ContactName&quot; : &quot;&quot;,
+  &quot;ContactId&quot; : &quot;&quot;,
+  &quot;AccountId&quot; : &quot;&quot;,
+  &quot;Step1&quot; : {
+    &quot;Contact Details&quot; : {
+      &quot;ContactDetails&quot; : null
+    },
+    &quot;Can_you_please_verify_your_full_name_and_date_of_birth&quot; : &quot;Yes&quot;,
+    &quot;Can_you_confirm_the_address_and_contact_number_on_file&quot; : &quot;Yes&quot;,
+    &quot;What_is_your_loan_account_number&quot; : &quot;Yes&quot;,
+    &quot;Did_the_call_get_answered&quot; : &quot;Yes&quot;
+  },
+  &quot;CallCenterDisposition&quot; : &quot;Customer promises to pay&quot;,
+  &quot;PTPrecordTypeId&quot; : &quot;01272000000gRYUAA2&quot;,
+  &quot;DRId_Task&quot; : &quot;00T72000007zKllEAE&quot;,
+  &quot;recordType&quot; : &quot;01272000000gRYVAA2&quot;,
+  &quot;assessmentId&quot; : &quot;0U37200000005VxCAI&quot;,
+  &quot;response&quot; : {
+    &quot;Assessment_1&quot; : [ {
+      &quot;Name&quot; : &quot;Call with Customer On Wed Aug 28 00:00:00 GMT 2024&quot;,
+      &quot;AssessmentStatus&quot; : &quot;Completed&quot;,
+      &quot;UpsertSuccess&quot; : true,
+      &quot;Id&quot; : &quot;0U37200000005VxCAI&quot;,
+      &quot;UpsertSObjectType&quot; : &quot;Assessment&quot;
+    } ],
+    &quot;error&quot; : &quot;OK&quot;,
+    &quot;responseType&quot; : &quot;SObject&quot;,
+    &quot;rolledBack&quot; : false
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>InsertPTPTask</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>InsertPTPTaskCustom1441</globalKey>
+        <inputFieldName>PTPrecordTypeId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>InsertPTPTask</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordTypeId</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Customer Promise to Pay</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>InsertPTPTaskCustom7817</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>InsertPTPTask</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Subject</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>InsertPTPTaskCustom8416</globalKey>
+        <inputFieldName>Step2:What_will_be_the_payment_mode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>InsertPTPTask</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Payment_Mode__c</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>InsertPTPTaskCustom2755</globalKey>
+        <inputFieldName>Step2:When_would_you_be_able_to_make_your_next_payment</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>InsertPTPTask</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ActivityDate</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>InsertPTPTaskCustom9617</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>InsertPTPTask</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>InsertPTPTaskCustom4890</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>InsertPTPTask</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Promise To Pay (PTP)</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>InsertPTPTaskCustom8280</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>InsertPTPTask</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>InsertPTPTaskCustom5530</globalKey>
+        <inputFieldName>ContextId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>InsertPTPTask</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>WhatId</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>InsertPTPTaskCustom3520</globalKey>
+        <inputFieldName>Step2:When_would_you_be_able_to_make_your_next_payment</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>InsertPTPTask</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>PTP_Date__c</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Customer promises to pay</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>InsertPTPTaskCustom83</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>InsertPTPTask</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Call_Center_Disposition__c</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>InsertPTPTaskCustom6322</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>WhatId</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>InsertPTPTask</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>true</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;objectList&quot; : {
+    &quot;ContextId&quot; : &quot;5007200000OgStJAAV&quot;,
+    &quot;paymentId&quot; : null,
+    &quot;timeStamp&quot; : &quot;2024-08-26T09:44:40.449Z&quot;,
+    &quot;userProfile&quot; : &quot;System Administrator&quot;,
+    &quot;userTimeZoneName&quot; : &quot;Asia/Kolkata&quot;,
+    &quot;userTimeZone&quot; : &quot;330&quot;,
+    &quot;userCurrencyCode&quot; : &quot;INR&quot;,
+    &quot;userName&quot; : &quot;raghuveer.r@force.com.staging&quot;,
+    &quot;userId&quot; : &quot;005dN000000Vh3uQAC&quot;,
+    &quot;omniProcessId&quot; : &quot;0jN720000003SSnEAM&quot;,
+    &quot;localTimeZoneName&quot; : &quot;Asia/Calcutta&quot;,
+    &quot;Step2&quot; : {
+      &quot;When_did_you_make_the_payment&quot; : null,
+      &quot;What_was_the_payment_mode&quot; : null,
+      &quot;What_was_the_receipt_number&quot; : null,
+      &quot;What_was_the_reason_for_the_delay&quot; : &quot;ghfgh&quot;,
+      &quot;Can_you_pay_the_amount_online_now&quot; : &quot;No&quot;,
+      &quot;How_much_do_you_want_to_pay&quot; : null,
+      &quot;Amount_to_Paid&quot; : null,
+      &quot;Do_you_promise_to_pay&quot; : &quot;Yes&quot;,
+      &quot;When_would_you_be_able_to_make_your_next_payment&quot; : &quot;2024-08-26&quot;,
+      &quot;What_will_be_the_payment_mode&quot; : &quot;Online&quot;,
+      &quot;Call_Center_Disposition&quot; : null,
+      &quot;CustomLWC2&quot; : null,
+      &quot;Have_you_paid_your_recent_EMI&quot; : &quot;No&quot;,
+      &quot;Call_Description&quot; : &quot;ghfhghfh&quot;
+    },
+    &quot;recordId&quot; : &quot;5007200000OgStJAAV&quot;,
+    &quot;ContactName&quot; : &quot;Dev raj&quot;,
+    &quot;ContactId&quot; : &quot;0037200000QcgthAAB&quot;,
+    &quot;AccountId&quot; : &quot;0017200000YncBxAAJ&quot;,
+    &quot;Step1&quot; : {
+      &quot;Contact Details&quot; : {
+        &quot;ContactDetails&quot; : null
+      },
+      &quot;Can_you_please_verify_your_full_name_and_date_of_birth&quot; : &quot;Yes&quot;,
+      &quot;Can_you_confirm_the_address_and_contact_number_on_file&quot; : &quot;Yes&quot;,
+      &quot;What_is_your_loan_account_number&quot; : &quot;Yes&quot;,
+      &quot;Did_the_call_get_answered&quot; : &quot;Yes&quot;,
+      &quot;Comments&quot; : &quot;fgdhcdg&quot;
+    },
+    &quot;recordType&quot; : &quot;01272000000gRYVAA2&quot;,
+    &quot;contextId&quot; : &quot;5007200000OgStJAAV&quot;
+  },
+  &quot;bundleName&quot; : &quot;InsertPTPTask&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>InsertPTPTask_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

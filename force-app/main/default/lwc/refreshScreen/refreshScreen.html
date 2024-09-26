@@ -1,0 +1,9 @@
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </template>
+    <div class="slds-grid slds-grid_align-end">
+        <lightning-button label="Preview" title="Preview" onclick={previewFile} variant="brand" class="slds-m-left_x-small"></lightning-button>
+        <lightning-button label="Close" title="Close" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    </div>
+</template>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;vlcTimeTracking&quot; : {
+    &quot;CreateFollowUpTaskForPayment&quot; : null,
+    &quot;Step3&quot; : null,
+    &quot;Create PTP&quot; : null,
+    &quot;Step2&quot; : null,
+    &quot;Step1&quot; : null,
+    &quot;SetValue&quot; : null,
+    &quot;SetRecordId&quot; : null,
+    &quot;Save-Responses&quot; : null,
+    &quot;NavigateAction1&quot; : null,
+    &quot;IntegrationProcedureAction2&quot; : null,
+    &quot;for dispute initiated and log a call&quot; : null,
+    &quot;Get Case Details&quot; : null,
+    &quot;DataRaptorTaskRecordType&quot; : null,
+    &quot;CreateLogACallTask&quot; : null
+  },
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;userTimeZone&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;timeStamp&quot; : null,
+  &quot;ContextId&quot; : null,
+  &quot;Step3&quot; : {
+    &quot;Messaging1&quot; : null
+  },
+  &quot;Step2&quot; : {
+    &quot;When_would_you_be_able_to_make_your_next_payment&quot; : null,
+    &quot;When_did_you_make_the_payment&quot; : null,
+    &quot;What_will_be_the_payment_mode&quot; : null,
+    &quot;What_was_the_receipt_number&quot; : null,
+    &quot;What_was_the_reason_for_the_delay&quot; : null,
+    &quot;What_was_the_payment_mode&quot; : null,
+    &quot;Have_you_paid_your_recent_EMI&quot; : null,
+    &quot;Do_you_promise_to_pay&quot; : null,
+    &quot;CustomLWC2&quot; : null,
+    &quot;Call_Description&quot; : null,
+    &quot;Call_Center_Disposition&quot; : null,
+    &quot;Block2&quot; : { },
+    &quot;Block1&quot; : {
+      &quot;CustomLWC1&quot; : null
+    }
+  },
+  &quot;Step1&quot; : {
+    &quot;What_is_your_loan_account_number&quot; : null,
+    &quot;Did_the_call_get_answered&quot; : null,
+    &quot;ContactDetails&quot; : null,
+    &quot;Comments&quot; : null,
+    &quot;Can_you_please_verify_your_full_name_and_date_of_birth&quot; : null,
+    &quot;Can_you_confirm_the_address_and_contact_number_on_file&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>CreateTaskForFollowUp</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| TODAY</formulaConverted>
+        <formulaExpression>TODAY()</formulaExpression>
+        <formulaResultPath>dueDate</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>CreateTaskForFollowUpCustom4891</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateTaskForFollowUp</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateTaskForFollowUpCustom7684</globalKey>
+        <inputFieldName>ContextId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateTaskForFollowUp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>WhatId</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateTaskForFollowUpCustom1132</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateTaskForFollowUp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateTaskForFollowUpCustom6523</globalKey>
+        <inputFieldName>dueDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateTaskForFollowUp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ActivityDate</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Follow up on remaining Amount</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateTaskForFollowUpCustom5134</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateTaskForFollowUp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Subject</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateTaskForFollowUpCustom3964</globalKey>
+        <inputFieldName>recordType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateTaskForFollowUp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordTypeId</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;vlcTimeTracking&quot; : {
+    &quot;CreateFollowUpTaskForPayment&quot; : null,
+    &quot;Step3&quot; : null,
+    &quot;Create PTP&quot; : null,
+    &quot;Step2&quot; : null,
+    &quot;Step1&quot; : null,
+    &quot;SetValue&quot; : null,
+    &quot;SetRecordId&quot; : null,
+    &quot;Save-Responses&quot; : null,
+    &quot;NavigateAction1&quot; : null,
+    &quot;IntegrationProcedureAction2&quot; : null,
+    &quot;for dispute initiated and log a call&quot; : null,
+    &quot;Get Case Details&quot; : null,
+    &quot;DataRaptorTaskRecordType&quot; : null,
+    &quot;CreateLogACallTask&quot; : null
+  },
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;userTimeZone&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;timeStamp&quot; : null,
+  &quot;ContextId&quot; : null,
+  &quot;Step3&quot; : {
+    &quot;Messaging1&quot; : null
+  },
+  &quot;Step2&quot; : {
+    &quot;When_would_you_be_able_to_make_your_next_payment&quot; : null,
+    &quot;When_did_you_make_the_payment&quot; : null,
+    &quot;What_will_be_the_payment_mode&quot; : null,
+    &quot;What_was_the_receipt_number&quot; : null,
+    &quot;What_was_the_reason_for_the_delay&quot; : null,
+    &quot;What_was_the_payment_mode&quot; : null,
+    &quot;Have_you_paid_your_recent_EMI&quot; : null,
+    &quot;Do_you_promise_to_pay&quot; : null,
+    &quot;CustomLWC2&quot; : null,
+    &quot;Call_Description&quot; : null,
+    &quot;Call_Center_Disposition&quot; : null,
+    &quot;Block2&quot; : { },
+    &quot;Block1&quot; : {
+      &quot;CustomLWC1&quot; : null
+    }
+  },
+  &quot;Step1&quot; : {
+    &quot;What_is_your_loan_account_number&quot; : null,
+    &quot;Did_the_call_get_answered&quot; : null,
+    &quot;ContactDetails&quot; : null,
+    &quot;Comments&quot; : null,
+    &quot;Can_you_please_verify_your_full_name_and_date_of_birth&quot; : null,
+    &quot;Can_you_confirm_the_address_and_contact_number_on_file&quot; : null
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>CreateTaskForFollowUp_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

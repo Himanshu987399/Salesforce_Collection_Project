@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount_to_be_Paid_Must_Be_Greater_Than_0</fullName>
+    <active>true</active>
+    <errorConditionFormula>Amount_Paid__c   &lt;=  0</errorConditionFormula>
+    <errorMessage>Amount to be paid must be greater than 0</errorMessage>
+</ValidationRule>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PAN_Card_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    OR(
+        RecordType.DeveloperName = &quot;IndustriesBusiness&quot;,
+        RecordType.DeveloperName = &quot;IndustriesIndividual&quot;
+    ),
+    NOT(
+        OR(
+            ISBLANK(PAN__c),
+            REGEX(PAN__c, &quot;[A-Z]{5}[0-9]{4}[A-Z]{1}&quot;)
+        )
+    )
+)</errorConditionFormula>
+    <errorDisplayField>PAN__c</errorDisplayField>
+    <errorMessage>Invalid PAN Card , Please Enter Again</errorMessage>
+</ValidationRule>

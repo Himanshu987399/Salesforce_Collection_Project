@@ -1,0 +1,4 @@
+Dear {!Case.OwnerFullName}
+
+We hope this message finds you well.
+This is to notify you that the status of Case {!Case.CaseNumber}  has not been updated for more than 24 hours since the milestone completion. Kindly review the details below and take necessary action at the earliest.
