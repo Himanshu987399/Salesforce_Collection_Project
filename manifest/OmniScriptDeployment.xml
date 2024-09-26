@@ -32,6 +32,9 @@
 		<members>ExtractDocumentTemplateByTemplateType_1</members>
 		<members>ExtractDocumentTemplateByTemplate_1</members>
 		<members>FetchCase_1</members>
+		<members>DRExtractTaskForFlexCard_1</members>
+		<members>FetchCaseContactDetails_1</members>
+		<members>FetchPaymentDetails_1</members>
 		<members>GetAccountDetails_1</members>
 		<members>GetDocumentChecklist_1</members>
 		<members>InsertPTPTask_1</members>
