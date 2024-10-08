@@ -105,6 +105,16 @@
                 <identifier>RecordMobilePhoneField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Maximum_Cash_Collection_Limit__c</fieldItem>
+                <identifier>RecordMaximum_Cash_Collection_Limit_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-39952d67-15cb-4e62-83b8-5e184c4b8515</name>
         <type>Facet</type>
     </flexiPageRegions>

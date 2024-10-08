@@ -118,11 +118,6 @@
         <dataType>Boolean</dataType>
         <expression>ISNEW()</expression>
     </formulas>
-    <formulas>
-        <name>TODAY</name>
-        <dataType>Date</dataType>
-        <expression>NOW()</expression>
-    </formulas>
     <interviewLabel>Refund And Waive Off(After Insert,Update) {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Refund And Waive Off (After Create,Update)</label>
     <processMetadataValues>

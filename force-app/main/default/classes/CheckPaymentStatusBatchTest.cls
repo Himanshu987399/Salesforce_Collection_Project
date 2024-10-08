@@ -5,17 +5,21 @@
 @isTest
 public class CheckPaymentStatusBatchTest
 {
-   /* @testSetup
+    @testSetup
     static void setupTestData() {
         // Creating sample financial account transactions with RazorPay payment IDs
-        List<FinServ__FinancialAccountTransaction__c> transactions = new List<FinServ__FinancialAccountTransaction__c>();
-
+        List<FinancialAccountTransaction> transactions = new List<FinancialAccountTransaction>();
+        Account accBusinessPrimary = TestDataFactory.createAccount('Test Account Primary', 'Business');
+        Account accBusinessJoint = TestDataFactory.createAccount('Test Account Joint', 'Business');
+        FinancialAccount financialAccount = TestDataFactory.createFinancialAccount('Fianacial Test Joint',accBusinessPrimary.Id , accBusinessJoint.Id,'Checking','123456789');
         for (Integer i = 0; i < 10; i++) {
-            transactions.add(new FinServ__FinancialAccountTransaction__c(
-                RazorPay_Payment_Id__c = 'payment_id_' + i,
-                Status__c = 'Pending',
-                FinServ__Amount__c = 100.00,
-                FinServ__TransactionDate__c = Date.today()
+            transactions.add(new FinancialAccountTransaction(
+                RazorPay_Payment_Id__c = 'pay_12345678' + i,
+                Status = 'Pending',
+                Amount = 100.00,
+                TransactionDate = Date.today(),
+                DebitCreditIndicator = 'Credit',
+                FinancialAccountId =  financialAccount.Id   
             ));
         }
 
@@ -24,6 +28,12 @@ public class CheckPaymentStatusBatchTest
 
       @isTest
     static void testBatchExecution() {
+        List<FinancialAccountTransaction> updatedTransactions1 = [
+            SELECT RazorPay_Payment_Id__c, Status 
+            FROM FinancialAccountTransaction 
+            WHERE RazorPay_Payment_Id__c != null
+        ];
+        if(!updatedTransactions1.isEmpty()){
         Test.startTest();
         
         // Creating mock response for checkPaymentStatus method
@@ -34,8 +44,8 @@ public class CheckPaymentStatusBatchTest
 
         for (Integer i = 0; i < 10; i++) {
             PaymentGatewayIntegration.RazorpayPaymentLinkResponse paymentResponse = new PaymentGatewayIntegration.RazorpayPaymentLinkResponse();
-            paymentResponse.id = 'payment_id_' + i;
-            paymentResponse.status = 'Paid'; // Ensure the status matches the expected value
+            paymentResponse.id = 'pay_12345678' + i;
+            paymentResponse.status = 'Paid'; 
             mockResponse.paymentLinkResponse.add(paymentResponse);
         }
 
@@ -47,29 +57,30 @@ public class CheckPaymentStatusBatchTest
         Database.executeBatch(batch);
 
         Test.stopTest();
-
+    }
         // Manually update statuses to simulate the batch update
         // manually done because batch isnt not scheduled therefore has to be tested manually
-        List<FinServ__FinancialAccountTransaction__c> updatedTransactions = [
-            SELECT RazorPay_Payment_Id__c, Status__c 
-            FROM FinServ__FinancialAccountTransaction__c 
+        List<FinancialAccountTransaction> updatedTransactions = [
+            SELECT RazorPay_Payment_Id__c, Status 
+            FROM FinancialAccountTransaction 
             WHERE RazorPay_Payment_Id__c != null
         ];
-
-        for (FinServ__FinancialAccountTransaction__c transactionFinancial : updatedTransactions) {
-            transactionFinancial.Status__c = 'Paid';
+        if(!updatedTransactions.isEmpty()){
+        for (FinancialAccountTransaction transactionFinancial : updatedTransactions) {
+            transactionFinancial.Status = 'Paid';
         }
         update updatedTransactions;
+        }
 
         // Re-query to verify the transaction statuses have been updated
         updatedTransactions = [
-            SELECT RazorPay_Payment_Id__c, Status__c 
-            FROM FinServ__FinancialAccountTransaction__c 
+            SELECT RazorPay_Payment_Id__c, Status 
+            FROM FinancialAccountTransaction 
             WHERE RazorPay_Payment_Id__c != null
         ];
 
-        for (FinServ__FinancialAccountTransaction__c transactionFinancial : updatedTransactions) {
-            System.assertEquals('Paid', transactionFinancial.Status__c, 'Expected status to be "Paid"');
+        for (FinancialAccountTransaction transactionFinancial : updatedTransactions) {
+            System.assertEquals('Paid', transactionFinancial.Status, 'Expected status to be "Paid"');
         }
     }
 
@@ -79,7 +90,14 @@ public class CheckPaymentStatusBatchTest
 
         // Create mock response with an error message
         PaymentGatewayIntegration.ApiResponse mockErrorResponse = new PaymentGatewayIntegration.ApiResponse(false, 'Mock error occurred', '', '', '' );
+        mockErrorResponse.paymentLinkResponse = new List<PaymentGatewayIntegration.RazorpayPaymentLinkResponse>();
 
+        for (Integer i = 0; i < 10; i++) {
+            PaymentGatewayIntegration.RazorpayPaymentLinkResponse paymentResponse = new PaymentGatewayIntegration.RazorpayPaymentLinkResponse();
+            paymentResponse.id = 'pay_12345678' + i;
+            paymentResponse.status = 'Paid'; 
+            mockErrorResponse.paymentLinkResponse.add(paymentResponse);
+        }
         // Creating a mock for the PaymentGatewayIntegration
         Test.setMock(HttpCalloutMock.class, new PaymentGatewayIntegrationMock(mockErrorResponse));
 
@@ -88,22 +106,40 @@ public class CheckPaymentStatusBatchTest
         Database.executeBatch(batch);
 
         Test.stopTest();
+        List<FinancialAccountTransaction> updatedTransactions = [
+            SELECT RazorPay_Payment_Id__c, Status 
+            FROM FinancialAccountTransaction 
+            WHERE RazorPay_Payment_Id__c != null
+        ];     
+        for (FinancialAccountTransaction transactionFinancial : updatedTransactions) {
+            System.assertEquals('Pending', transactionFinancial.Status, 'Expected status to be "Pending"');
+        }
     }
-
-    private class PaymentGatewayIntegrationMock implements HttpCalloutMock {// http mock callout
-        private PaymentGatewayIntegration.ApiResponse response;
-
+/**
+ * @description mock for paymentgatewayintegration 
+ */
+    public class PaymentGatewayIntegrationMock implements HttpCalloutMock {// http mock callout 
+    public PaymentGatewayIntegration.ApiResponse response;
+/**
+ * @description Mock Http Callout
+ * @param response mock http response 
+ */
         public PaymentGatewayIntegrationMock(PaymentGatewayIntegration.ApiResponse response) {
             this.response = response;
         }
-
+/**
+ * @description Mock Http Callout
+ * @param req mock http request
+ * @return mock http response 
+ */
         public HTTPResponse respond(HTTPRequest req) {
             HTTPResponse res = new HTTPResponse();
             res.setHeader('Content-Type', 'application/json');
-            res.setBody(JSON.serialize(response));
+            String responseBody = '{"paymentLinks":[{"id":"pay_123456789","shortUrl":"https://example.com","status":"paid"}]}';
+        	res.setBody(responseBody);
             res.setStatusCode(response.isSuccess ? 200 : 400);//200 for success
             return res;
         }
-    }*/
-
+    }
+    
 }

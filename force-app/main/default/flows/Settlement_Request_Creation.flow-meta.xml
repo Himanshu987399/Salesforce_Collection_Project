@@ -223,7 +223,7 @@
         </inputAssignments>
         <object>Case</object>
     </recordUpdates>
-    <runInMode>SystemModeWithoutSharing</runInMode>
+    <runInMode>SystemModeWithSharing</runInMode>
     <screens>
         <name>Error_Manager_Is_Not_Assigned</name>
         <label>Error Manager Is Not Assigned</label>

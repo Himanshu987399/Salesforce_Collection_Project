@@ -26,7 +26,13 @@ public class BatchFOSAgentAssigned implements Database.Batchable<SObject>, Datab
      * @return Database.QueryLocator
      */
     public Database.QueryLocator start(Database.BatchableContext bc) {
-        String query = 'Select Id,WhatId,RecordType.Name,Payment_Mode__c,ActivityDate from Task where ActivityDate = TODAY AND RecordType.Name =: \'PTP\' AND Payment_Mode__c =: \'Offline\' AND Status =: \'Open\'';
+        //String query = 'Select Id,WhatId,RecordType.Name,Payment_Mode__c,ActivityDate from Task where ActivityDate = TODAY AND RecordType.Name =: \'PTP\' AND Payment_Mode__c =: \'Offline\' AND Status =: \'Open\'';
+        String query = 'SELECT Id, WhatId, RecordType.Name, Payment_Mode__c, ActivityDate FROM Task ' +
+               'WHERE ActivityDate = TODAY ' +
+               'AND RecordType.Name = \'PTP\' ' +
+               'AND Payment_Mode__c = \'Offline\' ' +
+               'AND Status = \'Open\'';
+
         return Database.getQueryLocator(query);
     }
     
@@ -89,17 +95,7 @@ public class BatchFOSAgentAssigned implements Database.Batchable<SObject>, Datab
      */
     private void processContacts(Map<Id, List<Id>> contactIdToCaseId, Map<String, List<Id>> postalCodeToCaseId) {
         for (Contact conInstance : [SELECT Id, MailingPostalCode FROM Contact WHERE Id IN :contactIdToCaseId.keySet()]) {
-            if (String.isBlank(conInstance.MailingPostalCode)) {
-                ErrorMessage err = new ErrorMessage();
-                err.caseId = String.join( contactIdToCaseId.get(conInstance.Id), ',' );
-                err.message = System.Label.Postal_Code_Missing;
-                errorMessages.add(err);
-            } else {
-               // for(String case)
-                //if(!postalCodeToCaseId.containsKey(conInstance.MailingPostalCode)){
-                  //  postalCodeToCaseId.put(conInstance.MailingPostalCode, new List<Id>());
-                //}
-                
+            if (!String.isBlank(conInstance.MailingPostalCode)) {
                 postalCodeToCaseId.put(conInstance.MailingPostalCode,contactIdToCaseId.get(conInstance.Id));
             }
         }
@@ -110,7 +106,7 @@ public class BatchFOSAgentAssigned implements Database.Batchable<SObject>, Datab
      * @param bc BatchableContext
      */
     public void finish(Database.BatchableContext bc) {
-
+       //no post execute process so empty
     }
      
     /**

@@ -203,6 +203,7 @@
         <object>Case</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <runInMode>DefaultMode</runInMode>
     <screens>
         <name>Error_On_Create_Transaction_Record</name>
         <label>Error On Create Transaction Record</label>

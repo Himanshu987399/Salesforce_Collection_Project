@@ -1,14 +1,20 @@
 @isTest
 public class PaymentGatewayIntegrationTest {
-    
-    // Mock class for HTTP callouts 
-    /*private class PaymentGatewayIntegrationMock implements HttpCalloutMock {
+    private class PaymentGatewayIntegrationMock implements HttpCalloutMock {
+       
         private String methodName;
-        
+   /**
+     * @description mock callout constructor
+     * @param methodName name of the method using the intergration class
+     */
         public PaymentGatewayIntegrationMock(String methodName) {
             this.methodName = methodName;
         }
-        
+    /**
+     * @description mock callout
+     * @param req mock http request 
+     * @return mock response
+     */ 
         public HTTPResponse respond(HTTPRequest req) {
             HttpResponse res = new HttpResponse();
             res.setHeader('Content-Type', 'application/json');
@@ -32,7 +38,7 @@ public class PaymentGatewayIntegrationTest {
         }
     }
   
-    @isTest// seting up the payment link
+    @isTest
     static void testCreatePaymentLink() {
         Test.setMock(HttpCalloutMock.class, new PaymentGatewayIntegrationMock('createPaymentLink'));
         
@@ -55,13 +61,13 @@ public class PaymentGatewayIntegrationTest {
         System.assertEquals('created', response.paymentStatus, 'Expected paymentStatus to match');
     }
     
-    @isTest// testing the payment status
+    @isTest
     static void testCheckPaymentStatus() {
         Test.setMock(HttpCalloutMock.class, new PaymentGatewayIntegrationMock('checkPaymentStatus'));
         
         Test.startTest();
         
-        Set<String> paymentIds = new Set<String>{'pay_29QQoUBi66xm2f'};
+        List<String> paymentIds = new List<String>{'pay_29QQoUBi66xm2f'};
         PaymentGatewayIntegration.ApiResponse response = PaymentGatewayIntegration.checkPaymentStatus(paymentIds, false, '');
         
         Test.stopTest();
@@ -78,7 +84,7 @@ public class PaymentGatewayIntegrationTest {
         Test.setMock(HttpCalloutMock.class, new PaymentGatewayIntegrationMock('checkPaymentStatusSingle'));
         
         Test.startTest();
-        PaymentGatewayIntegration.ApiResponse response = PaymentGatewayIntegration.checkPaymentStatus(new Set<String>(), true, 'pay_29QQoUBi66xm2f');
+        PaymentGatewayIntegration.ApiResponse response = PaymentGatewayIntegration.checkPaymentStatus(new List<String>(), true, 'pay_29QQoUBi66xm2f');
         Test.stopTest();
         
         System.assert(response.isSuccess, 'Expected isSuccess to be true');
@@ -108,17 +114,17 @@ public class PaymentGatewayIntegrationTest {
         System.assertEquals('', response.paymentId, 'Expected paymentId to be empty');
     }
 
-    @isTest// testing the payment status when error occours
+    @isTest
     static void testCheckPaymentStatusError() {
         Test.setMock(HttpCalloutMock.class, new PaymentGatewayIntegrationMock('checkPaymentStatusError'));
         
         Test.startTest();
         
-        Set<String> paymentIds = new Set<String>{'invalid_payment_id'};
+        List<String> paymentIds = new List<String>{'invalid_payment_id'};
         PaymentGatewayIntegration.ApiResponse response = PaymentGatewayIntegration.checkPaymentStatus(paymentIds, false, '');
         
         Test.stopTest();
         
         System.assert(!response.isSuccess, 'Expected isSuccess to be false');
-    }*/
+    }
 }

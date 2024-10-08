@@ -2,10 +2,10 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>61.0</apiVersion>
     <assignments>
-        <name>Status_is_paid_for_case</name>
-        <label>Status is paid for case</label>
-        <locationX>314</locationX>
-        <locationY>647</locationY>
+        <name>Paid_Assignment</name>
+        <label>Paid Assignment</label>
+        <locationX>578</locationX>
+        <locationY>1163</locationY>
         <assignmentItems>
             <assignToReference>Get_Case_Record.Status</assignToReference>
             <operator>Assign</operator>
@@ -14,14 +14,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Check_status_is_settled_for_case</targetReference>
+            <targetReference>Total_Amount_Collected</targetReference>
         </connector>
     </assignments>
     <assignments>
-        <name>Status_is_partial_paid_for_case</name>
-        <label>Status is partial paid for case</label>
-        <locationX>754</locationX>
-        <locationY>647</locationY>
+        <name>Partially_Paid_Assignment</name>
+        <label>Partially Paid Assignment</label>
+        <locationX>842</locationX>
+        <locationY>1163</locationY>
         <assignmentItems>
             <assignToReference>Get_Case_Record.Status</assignToReference>
             <operator>Assign</operator>
@@ -30,14 +30,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Case_Record_Update</targetReference>
+            <targetReference>Total_Amount_Collected</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>status_is_settled</name>
         <label>status is settled</label>
         <locationX>50</locationX>
-        <locationY>863</locationY>
+        <locationY>647</locationY>
         <assignmentItems>
             <assignToReference>Get_Case_Record.Status</assignToReference>
             <operator>Assign</operator>
@@ -56,10 +56,52 @@
             <targetReference>Parent_record_update</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Sum_Of_Amount</name>
+        <label>Sum Of Amount</label>
+        <locationX>798</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>Amount</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_on_related_financial_transaction.Amount</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_on_related_financial_transaction</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Total_Amount_Collected</name>
+        <label>Total Amount Collected</label>
+        <locationX>710</locationX>
+        <locationY>1355</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Case_Record.Total_Amount_Collected__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Amount</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Case_Record_Update</targetReference>
+        </connector>
+    </assignments>
+    <customErrors>
+        <name>Erorr_on_get_financial_transaction</name>
+        <label>Erorr on get financial transaction</label>
+        <locationX>1106</locationX>
+        <locationY>755</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Flow.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
     <customErrors>
         <name>Error_On_Get_Case_Record</name>
         <label>Error On Get Case Record</label>
-        <locationX>1282</locationX>
+        <locationX>1634</locationX>
         <locationY>539</locationY>
         <customErrorMessages>
             <errorMessage>{!$Flow.FaultMessage}</errorMessage>
@@ -69,8 +111,8 @@
     <customErrors>
         <name>Error_On_Update_Case_Record</name>
         <label>Error On Update Case Record</label>
-        <locationX>1018</locationX>
-        <locationY>1595</locationY>
+        <locationX>1370</locationX>
+        <locationY>1655</locationY>
         <customErrorMessages>
             <errorMessage>{!$Flow.FaultMessage}</errorMessage>
             <isFieldError>false</isFieldError>
@@ -80,48 +122,48 @@
         <name>Error_On_Update_Parent_Record</name>
         <label>Error On Update Parent Record</label>
         <locationX>314</locationX>
-        <locationY>1079</locationY>
+        <locationY>863</locationY>
         <customErrorMessages>
             <errorMessage>{!$Flow.FaultMessage}</errorMessage>
             <isFieldError>false</isFieldError>
         </customErrorMessages>
     </customErrors>
     <decisions>
-        <name>Check_Payment_Status</name>
-        <label>Check Payment Status</label>
-        <locationX>534</locationX>
-        <locationY>539</locationY>
+        <name>Check_Amount_Sum_Total_Sum</name>
+        <label>Check Amount Sum Total Sum</label>
+        <locationX>710</locationX>
+        <locationY>1055</locationY>
         <defaultConnector>
-            <targetReference>Status_is_partial_paid_for_case</targetReference>
+            <targetReference>Partially_Paid_Assignment</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>IF Partial Paid</defaultConnectorLabel>
+        <defaultConnectorLabel>Not Equal</defaultConnectorLabel>
         <rules>
-            <name>If_Fully_Paid</name>
+            <name>Equal</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Payment_Option__c</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>Amount</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
                 <rightValue>
-                    <stringValue>Pay the Entire Amount</stringValue>
+                    <elementReference>Get_Case_Record.Actual_Amount_To_Be_Paid__c</elementReference>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Status_is_paid_for_case</targetReference>
+                <targetReference>Paid_Assignment</targetReference>
             </connector>
-            <label>If Fully Paid</label>
+            <label>Equal</label>
         </rules>
     </decisions>
     <decisions>
-        <name>Check_status_is_settled_for_case</name>
-        <label>Check status is settled for case</label>
-        <locationX>314</locationX>
-        <locationY>755</locationY>
+        <name>Check_Parent_Id</name>
+        <label>Check Parent Id</label>
+        <locationX>380</locationX>
+        <locationY>539</locationY>
         <defaultConnector>
-            <targetReference>Case_Record_Update</targetReference>
+            <targetReference>All_Related_Financial_Transaction</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <defaultConnectorLabel>Parent Not Present</defaultConnectorLabel>
         <rules>
-            <name>case_have_parent_record_or_not</name>
+            <name>Parent_Id_Present</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>Get_Case_Record.ParentId</leftValueReference>
@@ -133,13 +175,13 @@
             <connector>
                 <targetReference>status_is_settled</targetReference>
             </connector>
-            <label>case have parent record or not</label>
+            <label>Parent Id Present</label>
         </rules>
     </decisions>
     <decisions>
         <name>Check_Transaction_Status_Changed</name>
         <label>Check Transaction Status Changed</label>
-        <locationX>1040</locationX>
+        <locationX>1139</locationX>
         <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -169,6 +211,20 @@
     <environments>Default</environments>
     <interviewLabel>Financial Account Transaction (After Insert,Update) {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Financial Account Transaction (After Insert,Update)</label>
+    <loops>
+        <name>Loop_on_related_financial_transaction</name>
+        <label>Loop on related financial transaction</label>
+        <locationX>710</locationX>
+        <locationY>755</locationY>
+        <collectionReference>All_Related_Financial_Transaction</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Sum_Of_Amount</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Check_Amount_Sum_Total_Sum</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -189,13 +245,44 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
+        <name>All_Related_Financial_Transaction</name>
+        <label>All Related Financial Transaction</label>
+        <locationX>710</locationX>
+        <locationY>647</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_on_related_financial_transaction</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Erorr_on_get_financial_transaction</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Paid</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Case_Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>FinancialAccountTransaction</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Case_Record</name>
         <label>Get Case Record</label>
-        <locationX>534</locationX>
+        <locationX>380</locationX>
         <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Check_Payment_Status</targetReference>
+            <targetReference>Check_Parent_Id</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Error_On_Get_Case_Record</targetReference>
@@ -215,8 +302,8 @@
     <recordUpdates>
         <name>Case_Record_Update</name>
         <label>Case Record Update</label>
-        <locationX>534</locationX>
-        <locationY>1487</locationY>
+        <locationX>380</locationX>
+        <locationY>1547</locationY>
         <faultConnector>
             <targetReference>Error_On_Update_Case_Record</targetReference>
         </faultConnector>
@@ -226,7 +313,7 @@
         <name>Parent_record_update</name>
         <label>Parent record update</label>
         <locationX>50</locationX>
-        <locationY>971</locationY>
+        <locationY>755</locationY>
         <connector>
             <targetReference>Case_Record_Update</targetReference>
         </connector>
@@ -250,7 +337,7 @@
         <object>Case</object>
     </recordUpdates>
     <start>
-        <locationX>914</locationX>
+        <locationX>1013</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Check_Transaction_Status_Changed</targetReference>
@@ -260,6 +347,14 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>Amount</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
     <variables>
         <name>Status</name>
         <dataType>String</dataType>

@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Assigned_Call_Center_Id</name>
+        <label>Assigned Call Center Id</label>
+        <locationX>842</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Call_Center_Agent__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assignmenet_Entitlement_Id</name>
+        <label>Assignmenet Entitlement Id</label>
+        <locationX>50</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.EntitlementId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Entitlement_Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
     <customErrors>
         <name>Falut_Message</name>
         <label>Falut Message</label>
@@ -21,28 +47,28 @@
             <name>Owner_is_User</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Status</leftValueReference>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Open</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <leftValueReference>$Record__Prior.OwnerId</leftValueReference>
                 <operator>StartsWith</operator>
                 <rightValue>
                     <stringValue>005</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Call_Center_Agent__r.Id</leftValueReference>
-                <operator>IsBlank</operator>
+                <leftValueReference>$Record.Call_Center_Agent__c</leftValueReference>
+                <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Case_Record</targetReference>
+                <targetReference>Assigned_Call_Center_Id</targetReference>
             </connector>
             <label>Owner is User</label>
         </rules>
@@ -89,7 +115,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_CaseRecord</targetReference>
+                <targetReference>Assignmenet_Entitlement_Id</targetReference>
             </connector>
             <label>Present</label>
         </rules>
@@ -146,40 +172,6 @@
         <object>Entitlement</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <recordUpdates>
-        <name>Update_Case_Record</name>
-        <label>Update Case Record</label>
-        <locationX>842</locationX>
-        <locationY>503</locationY>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Call_Center_Agent__c</field>
-            <value>
-                <elementReference>$Record.OwnerId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_CaseRecord</name>
-        <label>Update CaseRecord</label>
-        <locationX>50</locationX>
-        <locationY>611</locationY>
-        <inputAssignments>
-            <field>EntitlementId</field>
-            <value>
-                <elementReference>Get_Entitlement_Record.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
     <start>
         <locationX>452</locationX>
         <locationY>0</locationY>

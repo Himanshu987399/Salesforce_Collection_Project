@@ -2541,7 +2541,7 @@ app, objects, fields, tabs , apex classes, flows</description>
         <field>FinancialAccount.InterestRate</field>
         <readable>true</readable>
     </fieldPermissions>
-    
+
     <fieldPermissions>
         <editable>true</editable>
         <field>FinancialAccount.JointOwner__c</field>
@@ -3107,10 +3107,10 @@ app, objects, fields, tabs , apex classes, flows</description>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
+        <allowDelete>false</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Assessment</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -3143,10 +3143,10 @@ app, objects, fields, tabs , apex classes, flows</description>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
+        <allowDelete>false</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>AssessmentQuestionResponse</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>

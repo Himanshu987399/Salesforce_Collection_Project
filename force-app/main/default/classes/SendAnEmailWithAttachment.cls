@@ -3,12 +3,9 @@
  * It is designed to be invocable from Flow or Process Builder.
  */
 public with sharing class SendAnEmailWithAttachment {
-    
-
     /**
      * @description Sends an email with an attachment based on the provided input parameters.
      * @param inputVal List of InputVariable containing the necessary information for sending the email.
-     * @return List<OutputVariable> Returns null as the method doesn't currently utilize the output variables.
      */
     @InvocableMethod(label='Send An Email' description='Sends an email with attachment and returns a message')
     public static void sendEmail(List<InputVariable> inputVal){
@@ -64,6 +61,4 @@ public with sharing class SendAnEmailWithAttachment {
         @InvocableVariable(required=true label='Email Template')
         public String templateName;
     }
-    
-   
 }

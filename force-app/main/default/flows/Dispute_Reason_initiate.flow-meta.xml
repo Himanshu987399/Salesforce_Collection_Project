@@ -161,7 +161,7 @@
         </inputAssignments>
         <object>Case</object>
     </recordUpdates>
-    <runInMode>SystemModeWithoutSharing</runInMode>
+    <runInMode>SystemModeWithSharing</runInMode>
     <screens>
         <name>Case_Dispute_Reason</name>
         <label>Case Dispute Reason</label>

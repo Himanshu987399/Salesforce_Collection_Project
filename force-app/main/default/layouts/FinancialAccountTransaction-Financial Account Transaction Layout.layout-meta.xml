@@ -107,6 +107,10 @@
                 <behavior>Readonly</behavior>
                 <field>Transaction_Date__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Account_Holder_Name__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

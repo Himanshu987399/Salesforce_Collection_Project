@@ -19,13 +19,25 @@
                 <label>Cheque</label>
             </value>
             <value>
+                <fullName>Multiple Payment Methods</fullName>
+                <default>false</default>
+                <label>Multiple Payment Methods</label>
+            </value>
+            <value>
+                <fullName>Online</fullName>
+                <default>false</default>
+                <label>Online</label>
+            </value>
+            <value>
                 <fullName>Credit/Debit card</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Credit/Debit card</label>
             </value>
             <value>
                 <fullName>UPI</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>UPI</label>
             </value>
         </valueSetDefinition>

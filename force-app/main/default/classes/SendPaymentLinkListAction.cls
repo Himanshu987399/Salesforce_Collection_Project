@@ -3,7 +3,7 @@
 * @description This class is responsible for sending payment links and returning success or error messages in a flow.
 * It handles the process of generating and sending payment links for cases with associated contacts.
 */
-global with sharing class SendPaymentLinkListAction implements omnistudio.VlocityOpenInterface {
+public with sharing class SendPaymentLinkListAction implements omnistudio.VlocityOpenInterface {
     
     /**
 * @description Invocable method to send a payment link and return the result.
@@ -59,12 +59,13 @@ global with sharing class SendPaymentLinkListAction implements omnistudio.Vlocit
     }
     /**
 * @description this method is using on log a call functionality for getting amount of case 
-* @params caseId hold current case record Id
+* @param caseId hold current case record Id
+* @return caseRecord the value if actual amount to be paid
 */
     @AuraEnabled
     public static String getCaseAmountData(String caseId){
         try{
-            List<Case> caseRecord = [select Id,Format(Actual_Amount_To_Be_Paid__c) from case Where Id =: caseId LIMIT 1];
+            List<Case> caseRecord = [select Id,Format(Actual_Amount_To_Be_Paid__c) from case Where Id =: caseId WITH SECURITY_ENFORCED LIMIT 1 ];
             return String.ValueOf(caseRecord[0].Actual_Amount_To_Be_Paid__c) ?? '';
         }catch(Exception ex){
             throw new AuraHandledException(ex.getMessage());
@@ -82,9 +83,7 @@ global with sharing class SendPaymentLinkListAction implements omnistudio.Vlocit
 */
     public Boolean invokeMethod(String methodName, Map<String,Object> inputMap, Map<String,Object> outputMap, Map<String,Object> options) {
         Boolean isSuccess = false;
-        try {
-            System.debug('inputMap ' + inputMap);
-            
+        try {  
             // Create a new instance of InputVariable and populate it from the inputMap
             InputVariable inputVar = new InputVariable();
             inputVar.caseId = (String) inputMap.get('ContextId');
@@ -109,6 +108,7 @@ global with sharing class SendPaymentLinkListAction implements omnistudio.Vlocit
                 outputMap.put('result', resultOutput[0].errorMessage);
                 isSuccess = false;
             } else {
+                List<Case> caseList = [SELECT Id,Financial_Account__c FROM Case WHERE Id = : (String) inputMap.get('ContextId') WITH SECURITY_ENFORCED LIMIT 1];
                 FinancialAccountTransaction	 trans = new FinancialAccountTransaction();
                 trans.Case__c = (String) inputMap.get('ContextId');
                 trans.Amount  = (Decimal) step2Map.get('Amount_to_Paid');
@@ -118,8 +118,8 @@ global with sharing class SendPaymentLinkListAction implements omnistudio.Vlocit
                 trans.Payment_Url__c = resultOutput[0].razorePaymentUrl;
                 trans.RazorPay_Payment_Id__c =  resultOutput[0].razorePaymentId;
                 trans.status = resultOutput[0].razorePaymentStatus;
-                //   trans.FinancialAccountId = 
-                INSERT trans;
+                trans.FinancialAccountId = caseList[0].Financial_Account__c;
+                INSERT as system trans;
                 outputMap.put('result', System.Label.Success_Message_of_payment);
                 outputMap.put('paymentId', resultOutput[0].razorePaymentId);  // Store the payment ID
                 outputMap.put('paymentUrl', resultOutput[0].razorePaymentUrl);  // Store the payment URL
@@ -136,8 +136,10 @@ global with sharing class SendPaymentLinkListAction implements omnistudio.Vlocit
     
     /**
 * @description this method is using on log a call functionality for send payment Link
-* @params caseId hold current case record Id
-* @params paymentOption method of payment like partial payment,full payment
+* @param caseId hold current case record Id
+* @param amount amount of which user want to pay
+* @param paymentOption method of payment like partial payment,full payment
+* @return Response which hold success and error message
 */
     @AuraEnabled 
     public static Response sendPaymentLinkFromLWC(String caseId,Decimal amount,String paymentOption){
@@ -168,10 +170,8 @@ global with sharing class SendPaymentLinkListAction implements omnistudio.Vlocit
                 trans.status = resultOutput[0].razorePaymentStatus;
                 trans.FinancialAccountId = caseList[0].Financial_Account__c;
                 trans.DebitCreditIndicator = System.Label.DebitCreditIndicator;
-                INSERT trans;
-                
-                UPDATE new Case(Id=caseId,status=System.Label.Under_Payment_Process);
-                
+                INSERT as system trans;
+                UPDATE as system new Case(Id=caseId,status=System.Label.Under_Payment_Process);
                 response.isError = false;
                 response.message = System.Label.Success_Message_of_payment;
                 response.paymentId = resultOutput[0].razorePaymentId;
@@ -208,7 +208,7 @@ global with sharing class SendPaymentLinkListAction implements omnistudio.Vlocit
     /**
 * @description Inner class to represent output variables for the invocable method
 */
-    global class OutputVariable {
+    public class OutputVariable {
         @InvocableVariable(label='Error Message')
         @AuraEnabled
         public String errorMessage;
@@ -233,7 +233,7 @@ global with sharing class SendPaymentLinkListAction implements omnistudio.Vlocit
 * @param razorePaymentUrlP The Razorpay payment URL
 * @param razorePaymentStatus The Razorpay payment status
 */
-        global OutputVariable(String errorMessage, Boolean isError, String razorePaymentIdP, String razorePaymentUrlP, String razorePaymentStatus) {
+        public OutputVariable(String errorMessage, Boolean isError, String razorePaymentIdP, String razorePaymentUrlP, String razorePaymentStatus) {
             this.errorMessage = errorMessage;
             this.isError = isError;
             this.razorePaymentId = razorePaymentIdP;

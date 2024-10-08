@@ -2,7 +2,7 @@
  * @description Handles trigger operations for FinancialAccountFee objects.
  * This class is responsible for updating related Case records with total EMI due and total amount paid.
  */
-public class FinancialAccountFeeHandler {
+public with sharing class FinancialAccountFeeHandler {
     
     /**
      * @description Handles the trigger logic for FinancialAccountFee objects.
@@ -64,8 +64,8 @@ public class FinancialAccountFeeHandler {
             SELECT Case__c, Type, SUM(Amount) totalAmount
             FROM FinancialAccountFee
             WHERE Case__c IN :caseIds 
-            AND Case__r.Type = 'Collection Request'
-            GROUP BY Case__c, Type
+            AND Case__r.Type = 'Collection Request' WITH SECURITY_ENFORCED
+            GROUP BY Case__c, Type 
         ]) {
             Id caseId = (Id)ar.get('Case__c');
             String feeType = (String)ar.get('Type');

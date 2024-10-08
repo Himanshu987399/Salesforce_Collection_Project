@@ -87,6 +87,12 @@
                 <identifier>RecordChallan_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Account_Holder_Name__c</fieldItem>
+                <identifier>RecordAccount_Holder_Name__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-51592577-2321-4254-b89c-aa14ca28369c</name>
         <type>Facet</type>
     </flexiPageRegions>

@@ -3,99 +3,71 @@
  * @description Test class for FOS agent assigned action 
  */
 @isTest
-private class FOSAgentAssignedListAction_Test { 
-    /*@isTest
-    static void testAssignedFosAgent_NoCaseFound() {//method when no case is found or invlaid case is found
+private class FOSAgentAssignedListAction_Test {
+
+    @isTest
+    static void testAssignedFosAgentNoCaseFound() {
         FOSAgentAssignedListAction.InputVariable input = new FOSAgentAssignedListAction.InputVariable();
         input.caseId = '0'; // Non-existing case ID
 
         List<FOSAgentAssignedListAction.InputVariable> inputList = new List<FOSAgentAssignedListAction.InputVariable>{input};
         List<FOSAgentAssignedListAction.OutputVariable> result = FOSAgentAssignedListAction.assignedFosAgent(inputList);
 
-        System.assertEquals(1, result.size());
-        System.assertEquals(true, result[0].isError);
-        System.assertEquals(Label.No_Case_Found, result[0].errorMessage);
+        System.assertEquals(1, result.size(),'');
+        System.assertEquals(true, result[0].isError,'');
+        System.assertEquals(Label.No_Case_Found, result[0].errorMessage,'');
     }
-
-    @isTest
-    static void testAssignedFosAgent_NoRelatedContact() {
-        //Creating a test case with no related contact
-        Case testCase = new Case();
-        testCase.Subject = 'Test Case';
-        insert testCase;
-
-        FOSAgentAssignedListAction.InputVariable input = new FOSAgentAssignedListAction.InputVariable();
-        input.caseId = testCase.Id;
+    
+     @isTest
+    static void testAssignedFosAgentPostalCodeMissing()
+    {
+    	Account accBusinessPrimary = TestDataFactory.createAccount('Test Account Primary', 'Business');
+    	Account accBusinessJoint = TestDataFactory.createAccount('Test Account Joint', 'Business');
+    
+    	Contact testContact = TestDataFactory.createContact('Test', 'Contact Final', 'test@phone.com','9998887771', accBusinessJoint.Id,null,'Business');
+    
+    	FinancialAccount financialAccount = TestDataFactory.createFinancialAccount('Fianacial Test Joint',accBusinessPrimary.Id , accBusinessJoint.Id,'Checking','12345');
+    
+    	// Create the Case record without assigning the Id field
+    	Case testFOSCase = TestDataFactory.createFOSAgentAssignedCase('Test Case', testContact.Id, accBusinessJoint.Id, 'Auto Loan', financialAccount.Id, 98000, 100000, Date.today().addDays(-10),null);
+		/*FOSAgentAssignedListAction.InputVariable input = new FOSAgentAssignedListAction.InputVariable();
+        input.caseId = testFOSCase.Id;
 
         List<FOSAgentAssignedListAction.InputVariable> inputList = new List<FOSAgentAssignedListAction.InputVariable>{input};
-        List<FOSAgentAssignedListAction.OutputVariable> result = FOSAgentAssignedListAction.assignedFosAgent(inputList);
+        List<FOSAgentAssignedListAction.OutputVariable> result = FOSAgentAssignedListAction.assignedFosAgent(inputList);*/
+        
+        
+        FOSAgentAssignedListAction.InputVariable input = new FOSAgentAssignedListAction.InputVariable();
+    	input.caseId = testFOSCase.Id;
 
-        System.assertEquals(1, result.size());
-        System.assertEquals(true, result[0].isError);
-        System.assertEquals(Label.No_Related_Contact_Found, result[0].errorMessage);
+    	List<FOSAgentAssignedListAction.InputVariable> inputList = new List<FOSAgentAssignedListAction.InputVariable> { input };
+
+    	Test.startTest();
+    	List<FOSAgentAssignedListAction.OutputVariable> result = FOSAgentAssignedListAction.assignedFosAgent(inputList);
+    	Test.stopTest();
+
+        System.assertEquals(1, result.size(),'');
+        System.assertEquals(true, result[0].isError,'');
+        System.assertEquals(Label.Postal_Code_Missing, result[0].errorMessage,'');
     }
 
-    @isTest
-    static void testAssignedFosAgent_FosAgentAlreadyAssigned() {
-        // Creating a FOS agent contact
-        Contact agentFOS = new Contact(FirstName = 'AgentFOS', LastName = 'Test');
-        insert agentFOS;
-
-        // Creating a test case with a FOS agent already assigned
-        Case testCase = new Case();
-        testCase.Subject = 'Test Case';
-        testCase.FOS_Agent__c = agentFOS.Id; 
-        testCase.ContactId = agentFOS.Id; 
-        insert testCase;
-
-        FOSAgentAssignedListAction.InputVariable input = new FOSAgentAssignedListAction.InputVariable();
-        input.caseId = testCase.Id;
-
-        List<FOSAgentAssignedListAction.InputVariable> inputList = new List<FOSAgentAssignedListAction.InputVariable>{input};
-        List<FOSAgentAssignedListAction.OutputVariable> result = FOSAgentAssignedListAction.assignedFosAgent(inputList);
-
-        System.assertEquals(1, result.size());
-        System.assertEquals(true, result[0].isError); 
-        System.assertEquals(Label.FOS_Agent_Assigned, result[0].errorMessage);
-    }
-
-    @isTest
-    static void testAssignedFosAgent_PostalCodeMissing() {
-        // Creating a test contact without a postal code
-        Contact testContact = new Contact(LastName = 'Doe');
-        insert testContact;
-
-        // Creating a test case related to the contact
-        Case testCase = new Case();
-        testCase.Subject = 'Test Case';
-        testCase.ContactId = testContact.Id;
-        insert testCase;
+     
+        @isTest
+        static void testAssignedFosAgentSuccess()
+        {
+         Account accBusinessPrimary = TestDataFactory.createAccount('Test Account Primary', 'Business');
+         Account accBusinessJoint = TestDataFactory.createAccount('Test Account Joint', 'Business');
+    
+    	Contact testContact = TestDataFactory.createContactPostal('Test', 'Contact Final', 'test@phone.com','9998887771', accBusinessJoint.Id,'123456','Business');
+    	Contact fOSContact = TestDataFactory.createContactPostal('FOS', 'Contact FOS', 'FOS@phone.com', '9998887773', accBusinessJoint.Id,'123456','FOS');
+    
+    	FinancialAccount financialAccount = TestDataFactory.createFinancialAccount('Fianacial Test Joint',accBusinessPrimary.Id , accBusinessJoint.Id,'Checking','12345');
+    
+    	// Create the Case record without assigning the Id field
+    	Case testFOSCase = TestDataFactory.createFOSAgentAssignedCase('Test Case', testContact.Id, accBusinessJoint.Id, 'Auto Loan', financialAccount.Id, 98000, 100000, Date.today().addDays(-10),fOSContact.Id);
 
         FOSAgentAssignedListAction.InputVariable input = new FOSAgentAssignedListAction.InputVariable();
-        input.caseId = testCase.Id;
-
-        List<FOSAgentAssignedListAction.InputVariable> inputList = new List<FOSAgentAssignedListAction.InputVariable>{input};
-        List<FOSAgentAssignedListAction.OutputVariable> result = FOSAgentAssignedListAction.assignedFosAgent(inputList);
-
-        System.assertEquals(1, result.size());
-        System.assertEquals(true, result[0].isError);
-        System.assertEquals(Label.Postal_Code_Missing, result[0].errorMessage);
-    }
-
-    @isTest
-    static void testAssignedFosAgent_Success() {
-        // Creating a test contact with a postal code
-        Contact testContact = new Contact(LastName = 'Doe', MailingPostalCode = '12345');
-        insert testContact;
-
-        // Creating a test case related to the contact
-        Case testCase = new Case();
-        testCase.Subject = 'Test Case';
-        testCase.ContactId = testContact.Id;
-        insert testCase;
-
-        FOSAgentAssignedListAction.InputVariable input = new FOSAgentAssignedListAction.InputVariable();
-        input.caseId = testCase.Id;
+        input.caseId = testFOSCase.Id;
 
         List<FOSAgentAssignedListAction.InputVariable> inputList = new List<FOSAgentAssignedListAction.InputVariable>{input};
         
@@ -105,7 +77,35 @@ private class FOSAgentAssignedListAction_Test {
         Test.stopTest();
 
         // Assert the result based on the mock response
-        System.assertEquals(1, result.size());
-        System.assertEquals(true, result[0].isError);
-    }*/
+        System.assertEquals(1, result.size(),'');
+        System.assertEquals(true, result[0].isError,'');
+        }
+    
+    @IsTest
+static void testPostalCodeVsCaseIdMapping() {
+    // Create test data
+    Account accBusinessPrimary = TestDataFactory.createAccount('Test Account Primary', 'Business');
+    Account accBusinessJoint = TestDataFactory.createAccount('Test Account Joint', 'Business');
+    
+    // Create a Contact with a valid postal code
+    Contact testContact = TestDataFactory.createContactPostal('Test', 'Contact Final', 'test@phone.com','9998887771', accBusinessJoint.Id,'123456','Business');
+    Contact fOSContact = TestDataFactory.createContactPostal('FOS', 'Contact FOS', 'FOS@phone.com', '9998887773', accBusinessJoint.Id,'123456','FOS');
+
+    FinancialAccount financialAccount = TestDataFactory.createFinancialAccount('Fianacial Test Joint',accBusinessPrimary.Id , accBusinessJoint.Id,'Checking','12345');
+    // Create a Case record associated with the Contact
+    Case testFOSCase = TestDataFactory.createFOSAgentAssignedCase('Test Case', testContact.Id, accBusinessJoint.Id, 'Auto Loan', financialAccount.Id, 98000, 100000, Date.today().addDays(-10),fOSContact.Id);
+    
+    // Prepare input for the FOSAgentAssignedListAction method
+    FOSAgentAssignedListAction.InputVariable input = new FOSAgentAssignedListAction.InputVariable();
+    input.caseId = testFOSCase.Id;
+
+    List<FOSAgentAssignedListAction.InputVariable> inputList = new List<FOSAgentAssignedListAction.InputVariable> { input };
+
+    Test.startTest();
+    List<FOSAgentAssignedListAction.OutputVariable> result = FOSAgentAssignedListAction.assignedFosAgent(inputList);
+    Test.stopTest();
+
+    System.assertEquals(1, result.size(), 'The result list should contain one element.');
+}
+
 }

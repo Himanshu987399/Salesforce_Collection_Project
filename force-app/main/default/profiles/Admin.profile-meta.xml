@@ -66,13 +66,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>PaymentGatewayIntegrationTest</apexClass>
+        <apexClass>ReceiptAndChallanRestResource</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>ReceiptAPIController</apexClass>
+        <apexClass>PaymentGatewayIntegrationTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    
     <classAccesses>
         <apexClass>ReceiptMappingHandler</apexClass>
         <enabled>true</enabled>

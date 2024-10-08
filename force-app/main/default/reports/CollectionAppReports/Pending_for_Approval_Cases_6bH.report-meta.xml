@@ -51,7 +51,7 @@
         <field>STATUS</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Pending for Approval Cases</name>
+    <name>Cases Pending for Approval</name>
     <params>
         <name>units</name>
         <value>h</value>

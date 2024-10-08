@@ -18,7 +18,7 @@ public without sharing class RoundRobinAssignment {
                 SELECT Id, Branch_Unit__c, Pincode__r.Name, Branch_Unit__r.IsActive 
                 FROM Branch_Pincode_Mapping__c 
                 WHERE Pincode__r.Name IN :pCodeVsCaseId.keySet() 
-                AND Branch_Unit__r.IsActive = true
+                AND Branch_Unit__r.IsActive = true WITH SYSTEM_MODE
             ];
             
             if (branchPincodeMappingList.isEmpty()) {
@@ -33,7 +33,7 @@ public without sharing class RoundRobinAssignment {
                 SELECT Id, BranchUnitId, BusinessUnitMemberId 
                 FROM BranchUnitBusinessMember 
                 WHERE BranchUnitId IN :branchUnitIdVsPostalCode.keySet() 
-                AND IsActive = true
+                AND IsActive = true WITH SYSTEM_MODE
                 
             ];
             
@@ -49,7 +49,7 @@ public without sharing class RoundRobinAssignment {
             List<Banker> bankerList = [
                 SELECT Id, UserOrContactId 
                 FROM Banker 
-                WHERE Id IN :businessUnitMemIdVsPostalCode.keySet()
+                WHERE Id IN :businessUnitMemIdVsPostalCode.keySet() WITH SYSTEM_MODE
                 
             ];
             
@@ -149,8 +149,8 @@ public without sharing class RoundRobinAssignment {
 * @return Response
 */
     private static Response assignedCaseToQueue(Set<Id> caseIds,Boolean callFromButton) {
-        List<Case> caseList = [SELECT Id, OwnerId FROM Case WHERE Id IN :caseIds ];
-        List<Group> getQueue = [SELECT Id, DeveloperName FROM Group WHERE Type = 'Queue' AND DeveloperName = :System.Label.FOS_Agent_Queue];
+        List<Case> caseList = [SELECT Id, OwnerId FROM Case WHERE Id IN :caseIds WITH SYSTEM_MODE ];
+        List<Group> getQueue = [SELECT Id, DeveloperName FROM Group WHERE Type = 'Queue' AND DeveloperName = :System.Label.FOS_Agent_Queue WITH SYSTEM_MODE ];
         
         if (!getQueue.isEmpty() && !caseList.isEmpty()) {
             Id queueId = getQueue[0].Id;

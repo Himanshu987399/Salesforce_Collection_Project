@@ -70,9 +70,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>ReceiptAPIController</apexClass>
+        <apexClass>ReceiptAndChallanRestResource</apexClass>
         <enabled>false</enabled>
     </classAccesses>
+    
     <classAccesses>
         <apexClass>ReceiptMappingHandler</apexClass>
         <enabled>false</enabled>

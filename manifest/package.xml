@@ -2,30 +2,41 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
 	<types>
 		<members>ApprovalProcessComment</members>
+		<members>ApprovalProcessCommentTest</members>
 		<members>BatchFOSAgentAssigned</members>
+		<members>BatchFOSAgentAssignedTest</members>
 		<members>CaseTriggerHandler</members>
 		<members>CaseTriggerHandlerTest</members>
 		<members>ChallanMappingHandler</members>
+		<members>ChallanMappingHandlerTest</members>
 		<members>CheckPaymentStatusBatch</members>
 		<members>CheckPaymentStatusBatchTest</members>
 		<members>CollectionUtility</members>
+		<members>CollectionUtilityTest</members>
 		<members>FOSAgentAssignedListAction</members>
 		<members>FOSAgentAssignedListAction_Test</members>
 		<members>FetchPaymentStatusBatch</members>
+		<members>FetchPaymentStatusBatchTest</members>
 		<members>FetchPaymentStatusListAction</members>
 		<members>FetchPaymentStatusListActionTest</members>
 		<members>FinancialAccountFeeHandler</members>
+		<members>FinancialAccountFeeHandlerTest</members>
 		<members>PaymentGatewayIntegration</members>
 		<members>PaymentGatewayIntegrationTest</members>
-		<members>ReceiptAPIController</members>
+		<members>ReceiptAPIControllerTest</members>
+		<members>ReceiptAndChallanRestResource</members>
 		<members>ReceiptMappingHandler</members>
+		<members>ReceiptMappingHandlerTest</members>
 		<members>RefundAndWaiveOffHandler</members>
+		<members>RefundAndWaiveOffTriggerTest</members>
 		<members>Response</members>
 		<members>RoundRobinAssignment</members>
 		<members>RoundRobinAssignmentTest</members>
 		<members>SendAnEmailWithAttachment</members>
+		<members>SendAnEmailWithAttachmentTest</members>
 		<members>SendPaymentLinkListAction</members>
 		<members>SendPaymentLinkListActionTest</members>
+		<members>TestDataFactory</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
@@ -37,29 +48,6 @@
 	<types>
 		<members>*</members>
 		<name>ApprovalProcess</name>
-	</types>
-	<types>
-		<members>Amount_to_Paid</members>
-		<members>Call_Center_Disposition</members>
-		<members>Call_Description</members>
-		<members>Can_you_confirm_the_address_and_contact_number_on_file</members>
-		<members>Can_you_pay_the_amount_online_now</members>
-		<members>Can_you_please_verify_your_full_name_and_date_of_birth</members>
-		<members>Comments</members>
-		<members>Did_the_call_get_answered</members>
-		<members>Do_you_promise_to_pay</members>
-		<members>Have_you_paid_your_recent_EMI</members>
-		<members>How_much_do_you_want_to_pay</members>
-		<members>What_was_the_payment_mode</members>
-		<members>What_was_the_reason_for_the_delay</members>
-		<members>What_was_the_receipt_number</members>
-		<members>What_was_the_receipt_numbers</members>
-		<members>What_was_the_transaction_Id</members>
-		<members>What_will_be_the_payment_mode</members>
-		<members>When_did_you_make_the_payment</members>
-		<members>When_would_you_be_able_to_make_your_next_payment</members>
-		<members>What_is_your_loan_account_number</members>
-		<name>AssessmentQuestion</name>
 	</types>
 	<types>
 		<members>Case.Case Assignment</members>
@@ -75,7 +63,251 @@
 		<name>CustomApplication</name>
 	</types>
 	<types>
+		<members>API_Log__c.Endpoint__c</members>
+		<members>API_Log__c.Headers__c</members>
+		<members>API_Log__c.Method__c</members>
+		<members>API_Log__c.Record_Id__c</members>
+		<members>API_Log__c.Request_Body__c</members>
+		<members>API_Log__c.Response_Body__c</members>
+		<members>API_Log__c.Response_Code__c</members>
+		<members>API_Log__c.Type__c</members>
+		<members>Account.Person_Contact__c</members>
+		<members>AccountContactRelation.Relationship_Strength__c</members>
+		<members>Activity.Are_there_any_specific_payment_options_y__c</members>
+		<members>Activity.Are_there_any_technical_issues_preventin__c</members>
+		<members>Activity.Are_you_willing_to_commit_to_a_promise_t__c</members>
+		<members>Activity.Call_Center_Disposition__c</members>
+		<members>Activity.Call_Description__c</members>
+		<members>Activity.Check_In_Location__c</members>
+		<members>Activity.Check_Out_Location__c</members>
+		<members>Activity.Collected_Amount__c</members>
+		<members>Activity.External_Id__c</members>
+		<members>Activity.FOS_Disposition__c</members>
+		<members>Activity.In_Visit_Date_Time__c</members>
+		<members>Activity.Loan_Amount__c</members>
+		<members>Activity.Next_Visit_Date__c</members>
+		<members>Activity.Other_FOS_Disposition__c</members>
+		<members>Activity.Out_Visit_Date_Time__c</members>
+		<members>Activity.Payment_Method__c</members>
+		<members>Activity.Payment_Mode__c</members>
+		<members>Activity.Record_Type_Name__c</members>
+		<members>Activity.Visit_Status__c</members>
+		<members>Admin_User__c.Email__c</members>
+		<members>Admin_User__c.External_Id__c</members>
+		<members>Admin_User__c.Password__c</members>
+		<members>Admin_User__c.SSO_Token__c</members>
+		<members>Admin_User__c.Token__c</members>
+		<members>Asset.Builder_Name__c</members>
+		<members>Asset.Chassis_Number__c</members>
+		<members>Asset.Engine_Number__c</members>
+		<members>Asset.Financial_Account__c</members>
+		<members>Asset.Make__c</members>
+		<members>Asset.Model__c</members>
+		<members>Asset.Primary_Owner__c</members>
+		<members>Asset.Registration_Number__c</members>
+		<members>Asset.Type__c</members>
+		<members>Asset.Variant__c</members>
+		<members>Attendance__c.Contact__c</members>
+		<members>Attendance__c.External_Id__c</members>
+		<members>Attendance__c.In_Location_Description__c</members>
+		<members>Attendance__c.In_Time__c</members>
+		<members>Attendance__c.In_location__c</members>
+		<members>Attendance__c.Login_Date__c</members>
+		<members>Attendance__c.Out_Location_Description__c</members>
+		<members>Attendance__c.Out_Location__c</members>
+		<members>Attendance__c.Out_Time__c</members>
+		<members>Bank_Account__c.Account_Holder_Name__c</members>
+		<members>Bank_Account__c.Account_Number__c</members>
+		<members>Bank_Account__c.Account__c</members>
+		<members>Bank_Account__c.Contact__c</members>
+		<members>Bank_Account__c.Financial_Account__c</members>
+		<members>Bank_Account__c.IFSC_Master__c</members>
+		<members>Banker.External_Id__c</members>
+		<members>BranchUnitBusinessMember.External_Id__c</members>
+		<members>Branch_Pincode_Mapping__c.Branch_Unit__c</members>
+		<members>Branch_Pincode_Mapping__c.Pincode__c</members>
+		<members>Case.Actual_Amount_To_Be_Paid__c</members>
+		<members>Case.Amount_Paid__c</members>
+		<members>Case.Approval_Status__c</members>
+		<members>Case.Call_Center_Agent__c</members>
+		<members>Case.Call_Center_Disposition__c</members>
+		<members>Case.Case_Comments__c</members>
+		<members>Case.DPD__c</members>
+		<members>Case.DPD_category__c</members>
+		<members>Case.Date_of_the_settlement__c</members>
+		<members>Case.Disbursal_Date__c</members>
+		<members>Case.Dispute_Reason__c</members>
+		<members>Case.Dispute_Status__c</members>
+		<members>Case.External_Id__c</members>
+		<members>Case.FOS_Agent_Assigned_Date__c</members>
+		<members>Case.FOS_Agent__c</members>
+		<members>Case.Financial_Account__c</members>
+		<members>Case.Is_Legal__c</members>
+		<members>Case.Is_Open__c</members>
+		<members>Case.Is_Receipt_Send__c</members>
+		<members>Case.Last_EMI_Due_Date__c</members>
+		<members>Case.Loan_No__c</members>
+		<members>Case.PTP_Date__c</members>
+		<members>Case.Product_Type__c</members>
+		<members>Case.Reason_for_the_settlement__c</members>
+		<members>Case.Settelment__c</members>
+		<members>Case.Settlement_Amount__c</members>
+		<members>Case.Tenure_Type__c</members>
+		<members>Case.Tenure__c</members>
+		<members>Case.Total_Amount_Collected__c</members>
+		<members>Case.Total_EMI_due__c</members>
+		<members>Case.Total_Waive_Off_Amount__c</members>
+		<members>Case.Visit_Date__c</members>
+		<members>Challan__c.Branch_Unit__c</members>
+		<members>Challan__c.Challan_Date__c</members>
+		<members>Challan__c.Document_Process_Id__c</members>
+		<members>Challan__c.External_Id__c</members>
+		<members>Challan__c.FOS_User__c</members>
+		<members>Challan__c.Total_Amount__c</members>
+		<members>Contact.Daily_case_assign_limit__c</members>
+		<members>Contact.External_Id__c</members>
+		<members>Contact.FOS__c</members>
+		<members>Contact.InActive_Date__c</members>
+		<members>Contact.In_Active_Till_Date__c</members>
+		<members>Contact.Is_Active__c</members>
+		<members>Contact.Last_Case_Assign__c</members>
+		<members>Contact.Location__c</members>
+		<members>Contact.Maximum_Cash_Collection_Limit__c</members>
+		<members>Contact.PAN__c</members>
+		<members>Contact.Token__c</members>
+		<members>Contact.is_FOS_Agent__c</members>
+		<members>Denomination__c.Denomination_Value__c</members>
+		<members>Denomination__c.External_Id__c</members>
+		<members>Denomination__c.Financial_Account_Transaction__c</members>
+		<members>Denomination__c.Quantity__c</members>
+		<members>Denomination__c.Total_Amount__c</members>
+		<members>Error_Log__c.Apex_Class_Name__c</members>
+		<members>Error_Log__c.Error_Description__c</members>
+		<members>Error_Log__c.Error_Title__c</members>
+		<members>Error_Log__c.Line_Number__c</members>
+		<members>Error_Log__c.Location__c</members>
+		<members>Error_Log__c.Method_Name__c</members>
+		<members>Error_Log__c.Record_Id__c</members>
+		<members>FinancialAccount.Cheque_Bounce_count__c</members>
+		<members>FinancialAccount.Current_NPA_Stage__c</members>
+		<members>FinancialAccount.Debt_type__c</members>
+		<members>FinancialAccount.Disbursal_Date__c</members>
+		<members>FinancialAccount.JointOwner__c</members>
+		<members>FinancialAccount.Last_EMI_Amount__c</members>
+		<members>FinancialAccount.Last_EMI_Date__c</members>
+		<members>FinancialAccount.Next_EMI_Amount__c</members>
+		<members>FinancialAccount.Next_EMI_Date__c</members>
+		<members>FinancialAccount.PrimaryOwner__c</members>
+		<members>FinancialAccount.Repo_Flag__c</members>
+		<members>FinancialAccount.Sanction_Amount__c</members>
+		<members>FinancialAccount.Shortfall_Flag__c</members>
+		<members>FinancialAccount.Term_Type__c</members>
+		<members>FinancialAccountFee.Account__c</members>
+		<members>FinancialAccountFee.Amount_With_type__c</members>
+		<members>FinancialAccountFee.Case__c</members>
+		<members>FinancialAccountFee.Waived_Off__c</members>
+		<members>FinancialAccountTransaction.Account_Holder_Name__c</members>
+		<members>FinancialAccountTransaction.Account__c</members>
+		<members>FinancialAccountTransaction.Bank_Name__c</members>
+		<members>FinancialAccountTransaction.Case__c</members>
+		<members>FinancialAccountTransaction.Challan__c</members>
+		<members>FinancialAccountTransaction.Cheque_Number__c</members>
+		<members>FinancialAccountTransaction.Contact__c</members>
+		<members>FinancialAccountTransaction.External_Id__c</members>
+		<members>FinancialAccountTransaction.FOS_Agent__c</members>
+		<members>FinancialAccountTransaction.IFSC__c</members>
+		<members>FinancialAccountTransaction.MICR__c</members>
+		<members>FinancialAccountTransaction.Payment_Method__c</members>
+		<members>FinancialAccountTransaction.Payment_Option__c</members>
+		<members>FinancialAccountTransaction.Payment_Url__c</members>
+		<members>FinancialAccountTransaction.RazorPay_Payment_Id__c</members>
+		<members>FinancialAccountTransaction.Receipt__c</members>
+		<members>FinancialAccountTransaction.Refund_and_Waive_off_Request__c</members>
+		<members>FinancialAccountTransaction.TransactionDate__c</members>
+		<members>FinancialAccountTransaction.Transaction_Date__c</members>
+		<members>FinancialAccountTransaction.Transaction_Sub_type__c</members>
+		<members>FinancialAccountTransaction.Transaction_Type__c</members>
+		<members>FinancialAccountTransaction.Waiver_Reason__c</members>
+		<members>IFSC_Master__c.Bank_Name__c</members>
+		<members>IFSC_Master__c.Branch__c</members>
+		<members>IFSC_Master__c.MICR__c</members>
+		<members>In_App_Checklist_Settings__c.ProfileKey__c</members>
+		<members>In_App_Checklist_Settings__c.Sales_Cloud_In_App_Page__c</members>
+		<members>Legal_Notice__c.Account__c</members>
+		<members>Legal_Notice__c.Case__c</members>
+		<members>Legal_Notice__c.Financial_Account__c</members>
+		<members>Login_History__c.Contact__c</members>
+		<members>Login_History__c.Device__c</members>
+		<members>Login_History__c.External_Id__c</members>
+		<members>Login_History__c.Fcm_Token__c</members>
+		<members>Login_History__c.Geolocation__c</members>
+		<members>Login_History__c.Login_Date_Time__c</members>
+		<members>Login_History__c.Login_IP__c</members>
+		<members>Login_History__c.Logout_Date_Time__c</members>
+		<members>Opportunity.Budget_Confirmed__c</members>
+		<members>Opportunity.Discovery_Completed__c</members>
+		<members>Opportunity.Loss_Reason__c</members>
+		<members>Opportunity.ROI_Analysis_Completed__c</members>
+		<members>Opportunity__hd.Amount__c</members>
+		<members>Opportunity__hd.Amount__c</members>
+		<members>Opportunity__hd.CloseDate__c</members>
+		<members>Opportunity__hd.CloseDate__c</members>
+		<members>Opportunity__hd.ForecastCategoryName__c</members>
+		<members>Opportunity__hd.ForecastCategoryName__c</members>
+		<members>Opportunity__hd.NextStep__c</members>
+		<members>Opportunity__hd.NextStep__c</members>
+		<members>Opportunity__hd.Probability__c</members>
+		<members>Opportunity__hd.Probability__c</members>
+		<members>Opportunity__hd.StageName__c</members>
+		<members>Opportunity__hd.StageName__c</members>
+		<members>PartyFinancialAsset.Case__c</members>
+		<members>PartyFinancialAsset.Financial_Account__c</members>
+		<members>Question_Master__c.Data_Type__c</members>
+		<members>Question_Master__c.Question__c</members>
+		<members>Question_Master__c.Required__c</members>
+		<members>Questions_and_Answers__c.Answer__c</members>
+		<members>Questions_and_Answers__c.Case__c</members>
+		<members>Questions_and_Answers__c.Question_Master__c</members>
+		<members>Receipt__c.Account__c</members>
+		<members>Receipt__c.Case__c</members>
+		<members>Receipt__c.Challan__c</members>
+		<members>Receipt__c.Document_Process_Id__c</members>
+		<members>Receipt__c.External_Id__c</members>
+		<members>Refund_and_Waive_off_Request__c.Amount__c</members>
+		<members>Refund_and_Waive_off_Request__c.Approval_Status__c</members>
+		<members>Refund_and_Waive_off_Request__c.Case__c</members>
+		<members>Refund_and_Waive_off_Request__c.External_Id__c</members>
+		<members>Refund_and_Waive_off_Request__c.Financial_Account_Fee__c</members>
+		<members>Refund_and_Waive_off_Request__c.Financial_Account__c</members>
+		<members>Refund_and_Waive_off_Request__c.Reason__c</members>
+		<members>Refund_and_Waive_off_Request__c.Type__c</members>
+		<members>Ticket__c.Assignee__c</members>
+		<members>Ticket__c.Category__c</members>
+		<members>Ticket__c.Created_By__c</members>
+		<members>Ticket__c.Description__c</members>
+		<members>Ticket__c.Device_Type__c</members>
+		<members>Ticket__c.Duplicate_Reason__c</members>
+		<members>Ticket__c.Duplicate_Ticket_To__c</members>
+		<members>Ticket__c.Platform__c</members>
+		<members>Ticket__c.Priority__c</members>
+		<members>Ticket__c.Release__c</members>
+		<members>Ticket__c.Salesforce_Team_Assignee__c</members>
+		<members>Ticket__c.Status__c</members>
+		<members>Ticket__c.Techmatrix_Team_Assignee_Name__c</members>
+		<members>Ticket__c.Ticket_Number__c</members>
+		<members>Ticket__c.Type__c</members>
+		<members>User.Limit__c</members>
+		<members>User_Device__c.Brand__c</members>
+		<members>User_Device__c.Contact__c</members>
+		<members>User_Device__c.External_Id__c</members>
+		<members>User_Device__c.IMEI__c</members>
+		<members>User_Device__c.Model__c</members>
+		<members>User_Device__c.OS_Version__c</members>
+		<name>CustomField</name>
+	</types>
+	<types>
 		<members>Agents_Not_Avaiable</members>
+		<members>Approved</members>
 		<members>Assigend_FOS_Successfully</members>
 		<members>Assign_Manager</members>
 		<members>Bank_Name</members>
@@ -91,6 +323,7 @@
 		<members>FOS_Agent_Assigned</members>
 		<members>FOS_Agent_Queue</members>
 		<members>FetchDataTime</members>
+		<members>FinancialAccountType</members>
 		<members>Financial_Account_Not_Found</members>
 		<members>IP_Name</members>
 		<members>Limit_send_payment</members>
@@ -103,6 +336,7 @@
 		<members>Pay_Partial_Amount</members>
 		<members>Pay_the_Entire_Amount</members>
 		<members>Payment_Time_Out</members>
+		<members>Pending_For_Approval</members>
 		<members>Permission_Set_Group_Call_Center</members>
 		<members>Permission_Set_Group_Supervisor</members>
 		<members>Permission_Set_Group_Team_Lead</members>
@@ -119,9 +353,6 @@
 		<members>Success_Message_of_payment</members>
 		<members>Successfully_created_refund_and_waiver</members>
 		<members>Under_Payment_Process</members>
-		<members>Approved</members>
-		<members>FinancialAccountType</members>
-		<members>Pending_For_Approval</members>
 		<name>CustomLabel</name>
 	</types>
 	<types>
@@ -132,6 +363,7 @@
 		<members>API_Log__c</members>
 		<members>Account</members>
 		<members>Account</members>
+		<members>Activity</members>
 		<members>Admin_User__c</members>
 		<members>Asset</members>
 		<members>Attendance__c</members>
@@ -158,10 +390,9 @@
 		<members>Pincode__c</members>
 		<members>Receipt__c</members>
 		<members>Refund_and_Waive_off_Request__c</members>
+		<members>Task</members>
 		<members>User</members>
 		<members>User_Device__c</members>
-		<members>Task</members>
-		<members>Activity</members>
 		<name>CustomObject</name>
 	</types>
 	<types>
@@ -218,6 +449,7 @@
 		<members>Business_Contact_Record_Page</members>
 		<members>Case_Record_Page_Full_Column</members>
 		<members>Challan_Record_Page</members>
+		<members>Collections_Master_UtilityBar</members>
 		<members>Collections_UtilityBar</members>
 		<members>Contact_Record_Page_Three_Column</members>
 		<members>Denomination_Record_Page</members>
@@ -234,7 +466,6 @@
 		<members>Receipt_Record_Page</members>
 		<members>Refund_and_Waive_off_Request_Record_Page</members>
 		<members>Task_Record_Page</members>
-		<members>Collections_Master_UtilityBar</members>
 		<name>FlexiPage</name>
 	</types>
 	<types>
@@ -290,16 +521,12 @@
 		<name>Layout</name>
 	</types>
 	<types>
+		<members>cfDisplayRelatedTaskOfCase</members>
+		<members>cfDisplayRelatedTaskOfCase_3_TechmatrixPteLtd</members>
 		<members>checkStatusOnButtonClick</members>
 		<members>refreshScreen</members>
 		<members>saveForLaterSaveForLaterEnglish</members>
-		<members>cfDisplayRelatedTaskOfCase</members>
-		<members>cfDisplayRelatedTaskOfCase_3_TechmatrixPteLtd</members>
 		<name>LightningComponentBundle</name>
-	</types>
-	<types>
-		<members>Omni_Channel_Presence</members>
-		<name>PresenceUserConfig</name>
 	</types>
 	<types>
 		<members>Contact.Prevent_Duplicate_Contacts_for_Fos_Agents</members>
@@ -314,18 +541,9 @@
 		<members>*</members>
 		<name>NamedCredential</name>
 	</types>
-	
 	<types>
 		<members>Collection_Case_Path</members>
 		<name>PathAssistant</name>
-	</types>
-	<types>
-		<members>Case_Assigned_Channel</members>
-		<name>ServiceChannel</name>
-	</types>
-	<types>
-		<members>*</members>
-		<name>ServicePresenceStatus</name>
 	</types>
 	<types>
 		<members>Call_Center_Financial_Service_Cloud_Extension</members>
@@ -345,6 +563,10 @@
 		<members>Supervisor_Permission_Set_Group</members>
 		<members>Team_Lead_Permission_Set_Group</members>
 		<name>PermissionSetGroup</name>
+	</types>
+	<types>
+		<members>Omni_Channel_Presence</members>
+		<name>PresenceUserConfig</name>
 	</types>
 	<types>
 		<members>Admin</members>
@@ -391,19 +613,21 @@
 		<members>CollectionAppReports/Todays_Case_Supervisor_7u2</members>
 		<name>Report</name>
 	</types>
-	
 	<types>
 		<members>Refund_and_Waive_off_Requests_Report</members>
 		<name>ReportType</name>
 	</types>
 	<types>
-		<members>CaseStatus</members>
-		<members>CaseType</members>
-		<name>StandardValueSet</name>
+		<members>*</members>
+		<name>Role</name>
+	</types>
+	<types>
+		<members>Case_Assigned_Channel</members>
+		<name>ServiceChannel</name>
 	</types>
 	<types>
 		<members>*</members>
-		<name>Role</name>
+		<name>ServicePresenceStatus</name>
 	</types>
 	<types>
 		<members>Entitlement</members>
@@ -412,8 +636,25 @@
 		<name>Settings</name>
 	</types>
 	<types>
+		<members>*</members>
+		<name>Skill</name>
+	</types>
+	<types>
+		<members>CaseStatus</members>
+		<members>CaseType</members>
+		<name>StandardValueSet</name>
+	</types>
+	<types>
 		<members>CSSFile</members>
 		<name>StaticResource</name>
+	</types>
+	<types>
+		<members>Collection_Case_TimeLine</members>
+		<name>TimelineObjectDefinition</name>
+	</types>
+	<types>
+		<members>*</members>
+		<name>WorkSkillRouting</name>
 	</types>
 	<types>
 		<members>*</members>
@@ -451,18 +692,6 @@
 		<members>Refund_and_Waive_off_Request__c.Reject_Status</members>
 		<members>Refund_and_Waive_off_Request__c.Rejected_Status</members>
 		<name>WorkflowFieldUpdate</name>
-	</types>
-	<types>
-		<members>*</members>
-		<name>Skill</name>
-	</types>
-	<types>
-		<members>Collection_Case_TimeLine</members>
-		<name>TimelineObjectDefinition</name>
-	</types>
-	<types>
-		<members>*</members>
-		<name>WorkSkillRouting</name>
 	</types>
 	<version>60.0</version>
 </Package>

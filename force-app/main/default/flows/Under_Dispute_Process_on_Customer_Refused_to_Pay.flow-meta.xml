@@ -7,6 +7,9 @@
         <locationY>431</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
+        <faultConnector>
+            <targetReference>Error_On_Approval_Process</targetReference>
+        </faultConnector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>objectId</name>
@@ -30,7 +33,27 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
         <versionSegment>1</versionSegment>
     </actionCalls>
-    <apiVersion>61.0</apiVersion>
+    <customErrors>
+        <name>Error_On_Approval_Process</name>
+        <label>Error On Approval Process</label>
+        <locationX>440</locationX>
+        <locationY>539</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Flow.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Error_On_update_Case</name>
+        <label>Error On update Case</label>
+        <locationX>704</locationX>
+        <locationY>431</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Flow.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <description>Update Case Status as Under Dispute</description>
     <environments>Default</environments>
     <interviewLabel>Under Dispute Process on Customer Refused to Pay {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Under Dispute Process on Customer Refused to Pay</label>
@@ -61,6 +84,9 @@
         <connector>
             <targetReference>Submit_for_Approval_Action</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Error_On_update_Case</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>

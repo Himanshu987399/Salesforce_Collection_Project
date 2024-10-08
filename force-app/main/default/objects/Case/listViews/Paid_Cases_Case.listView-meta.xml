@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Paid_Cases_Case</fullName>
-    <filterScope>Queue</filterScope>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CASES.CLOSED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.CASE_NUMBER</field>
+        <operation>contains</operation>
+        <value>2272,2269</value>
+    </filters>
     <label>Paid Cases</label>
-    <queue>Paid_Cases</queue>
     <sharedTo>
         <allInternalUsers></allInternalUsers>
     </sharedTo>

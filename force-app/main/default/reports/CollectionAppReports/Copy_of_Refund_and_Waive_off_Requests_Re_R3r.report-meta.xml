@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>Refund_and_Waive_off_Request__c$Name</field>
+        <field>Refund_and_Waive_off_Request__c$Case__c</field>
     </columns>
     <columns>
-        <field>Refund_and_Waive_off_Request__c$Case__c</field>
+        <field>Refund_and_Waive_off_Request__c$Case__c.Status</field>
+    </columns>
+    <columns>
+        <field>Refund_and_Waive_off_Request__c$Name</field>
     </columns>
     <columns>
         <field>Refund_and_Waive_off_Request__c$Case__c.Account</field>
     </columns>
     <columns>
         <field>Refund_and_Waive_off_Request__c$Case__c.Contact</field>
-    </columns>
-    <columns>
-        <field>Refund_and_Waive_off_Request__c$Case__c.Owner</field>
-    </columns>
-    <columns>
-        <field>Refund_and_Waive_off_Request__c$Case__c.Status</field>
     </columns>
     <columns>
         <field>Refund_and_Waive_off_Request__c$Case__c.Subject</field>
@@ -28,10 +25,16 @@
         <field>Refund_and_Waive_off_Request__c$Case__c.Priority</field>
     </columns>
     <columns>
-        <field>Refund_and_Waive_off_Request__c$Case__c.CreatedBy.CreatedDate</field>
+        <field>Refund_and_Waive_off_Request__c$CreatedDate</field>
     </columns>
     <columns>
-        <field>Refund_and_Waive_off_Request__c$Case__c.ClosedDate</field>
+        <field>Refund_and_Waive_off_Request__c$LastModifiedDate</field>
+    </columns>
+    <columns>
+        <field>Refund_and_Waive_off_Request__c$Case__c.Owner</field>
+    </columns>
+    <columns>
+        <field>Refund_and_Waive_off_Request__c$Id</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -46,16 +49,16 @@
         <field>Refund_and_Waive_off_Request__c$Case__c.Amount_Paid__c</field>
     </columns>
     <columns>
-        <field>Refund_and_Waive_off_Request__c$Case__c.LastModifiedDate</field>
-    </columns>
-    <columns>
-        <field>Refund_and_Waive_off_Request__c$CreatedDate</field>
-    </columns>
-    <columns>
         <field>Refund_and_Waive_off_Request__c$CreatedBy</field>
     </columns>
     <columns>
-        <field>Refund_and_Waive_off_Request__c$LastModifiedDate</field>
+        <field>Refund_and_Waive_off_Request__c$Case__c.CreatedBy.CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Refund_and_Waive_off_Request__c$Reason__c</field>
+    </columns>
+    <columns>
+        <field>Refund_and_Waive_off_Request__c$Approval_Status__c</field>
     </columns>
     <format>Tabular</format>
     <name>Refund and Waive off Requests</name>
@@ -70,6 +73,6 @@
     <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>Refund_and_Waive_off_Request__c$CreatedDate</dateColumn>
-        <interval>INTERVAL_CURRENT</interval>
+        <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>

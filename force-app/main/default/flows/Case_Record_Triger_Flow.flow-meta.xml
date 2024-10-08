@@ -142,7 +142,7 @@
         <name>Error_on_Create_Task_Record</name>
         <label>Error on Create Task Record</label>
         <locationX>314</locationX>
-        <locationY>1055</locationY>
+        <locationY>1295</locationY>
         <customErrorMessages>
             <errorMessage>{!$Flow.FaultMessage}</errorMessage>
             <isFieldError>false</isFieldError>
@@ -179,10 +179,20 @@
         </customErrorMessages>
     </customErrors>
     <customErrors>
+        <name>Error_on_update_case_owner</name>
+        <label>Error on update case owner</label>
+        <locationX>446</locationX>
+        <locationY>647</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Flow.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
         <name>Error_On_Update_Milestone_Record</name>
         <label>Error On Update Milestone Record</label>
         <locationX>446</locationX>
-        <locationY>1595</locationY>
+        <locationY>1835</locationY>
         <customErrorMessages>
             <errorMessage>{!$Flow.FaultMessage}</errorMessage>
             <isFieldError>false</isFieldError>
@@ -192,7 +202,7 @@
         <name>Error_on_Update_Parent_Record</name>
         <label>Error on Update Parent Record</label>
         <locationX>578</locationX>
-        <locationY>947</locationY>
+        <locationY>1187</locationY>
         <customErrorMessages>
             <errorMessage>{!$Flow.FaultMessage}</errorMessage>
             <isFieldError>false</isFieldError>
@@ -224,7 +234,7 @@
         <name>Check_status_is_settlement_rejected</name>
         <label>Check status is settlement rejected</label>
         <locationX>446</locationX>
-        <locationY>731</locationY>
+        <locationY>971</locationY>
         <defaultConnector>
             <targetReference>Closed_Milestone</targetReference>
         </defaultConnector>
@@ -278,6 +288,13 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Call_Center_Agent__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Update_Case_Owner</targetReference>
             </connector>
@@ -313,7 +330,7 @@
         <name>Closed_Milestone</name>
         <label>Closed Milestone</label>
         <locationX>446</locationX>
-        <locationY>1379</locationY>
+        <locationY>1619</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Condition_Met</name>
@@ -377,7 +394,7 @@
         <name>Create_Task_Record</name>
         <label>Create Task Record</label>
         <locationX>50</locationX>
-        <locationY>947</locationY>
+        <locationY>1187</locationY>
         <connector>
             <targetReference>Closed_Milestone</targetReference>
         </connector>
@@ -432,11 +449,14 @@
     <recordUpdates>
         <name>Update_Case_Owner</name>
         <label>Update Case Owner</label>
-        <locationX>314</locationX>
+        <locationX>182</locationX>
         <locationY>539</locationY>
         <connector>
             <targetReference>Check_status_is_settlement_rejected</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Error_on_update_case_owner</targetReference>
+        </faultConnector>
         <inputAssignments>
             <field>OwnerId</field>
             <value>
@@ -449,7 +469,7 @@
         <name>Update_milestone_Record</name>
         <label>Update Milestone Record</label>
         <locationX>182</locationX>
-        <locationY>1487</locationY>
+        <locationY>1727</locationY>
         <faultConnector>
             <targetReference>Error_On_Update_Milestone_Record</targetReference>
         </faultConnector>
@@ -473,7 +493,7 @@
         <name>Update_Parent_Record</name>
         <label>Update Parent Record</label>
         <locationX>50</locationX>
-        <locationY>839</locationY>
+        <locationY>1079</locationY>
         <connector>
             <targetReference>Create_Task_Record</targetReference>
         </connector>
